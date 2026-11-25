@@ -107,7 +107,7 @@ Algunos ejemplos de la clase `Coche`:
     En UML los miembros `static` se escriben **subrayados**. Las constantes se marcan con `{readOnly}` (y por convención con el nombre en MAYÚSCULAS).
 
 !!! tip "Atributos y relaciones"
-    Un atributo cuyo tipo es **otra clase del modelo** (por ejemplo, `Alquiler` tiene un `Vehiculo`) normalmente **no se escribe como atributo**: se dibuja como una **relación** entre las dos clases. Lo verás en el capítulo 4.
+    Un atributo cuyo tipo es **otra clase del modelo** (por ejemplo, `Alquiler` tiene un `Vehiculo`) normalmente **no se escribe como atributo**: se dibuja como una **relación** entre las dos clases. Lo verás en el capítulo 5.
 
 ## 3.4. Operaciones
 
@@ -128,7 +128,7 @@ Algunas convenciones útiles:
 
 - **Los constructores** se pueden omitir o escribirse como `+Coche(matricula : String, ...)`. Muchos diagramas los omiten porque se deducen.
 - **Los getters y setters** suelen omitirse cuando no aportan información (a menudo se dibujan solo si son relevantes para el diseño).
-- Una **operación abstracta** se escribe en *cursiva* (lo verás en el capítulo 5).
+- Una **operación abstracta** se escribe en *cursiva* (lo verás en el capítulo 7).
 - Si el método **no devuelve nada**, se indica `void` (o se omite el tipo de retorno).
 
 ## 3.5. Visibilidad
@@ -320,7 +320,7 @@ Fíjate en cómo se relacionan el diagrama de clases y el de objetos:
 | Es válido… | Siempre | Solo en ese momento |
 | Sirve para | Diseñar el sistema | Ilustrar un ejemplo, explicar un estado, depurar |
 
-Cuando haya relaciones entre clases (capítulo 4), el diagrama de objetos mostrará también los **enlaces** entre los objetos concretos.
+Cuando haya relaciones entre clases (capítulo 5), el diagrama de objetos mostrará también los **enlaces** entre los objetos concretos.
 
 ## Resumen del capítulo
 

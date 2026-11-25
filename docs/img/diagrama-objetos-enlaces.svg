@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 428" width="900" height="428" role="img" aria-labelledby="t d">
+<title id="t">Diagrama de objetos con enlaces</title>
+<desc id="d">Dos alquileres: a1 enlaza a Ana con el Ford Focus y a2 enlaza a Luis con el camión Volvo FH.</desc>
+<g font-family="Roboto, 'Segoe UI', Helvetica, Arial, sans-serif">
+<text x="130.0" y="32" font-size="15" font-weight="700" fill="#3949ab" text-anchor="middle">Conductores</text>
+<text x="450.0" y="32" font-size="15" font-weight="700" fill="#00897b" text-anchor="middle">Alquileres</text>
+<text x="760.0" y="32" font-size="15" font-weight="700" fill="#e65100" text-anchor="middle">Vehículos</text>
+<line x1="240" y1="126.0" x2="350" y2="126.0" stroke="#455a64" stroke-width="2.5"/>
+<line x1="550" y1="126.0" x2="640" y2="126.0" stroke="#455a64" stroke-width="2.5"/>
+<text x="295.0" y="118.0" font-size="13" fill="#455a64" text-anchor="middle" font-style="italic">conductor</text>
+<text x="595.0" y="118.0" font-size="13" fill="#455a64" text-anchor="middle" font-style="italic">vehiculo</text>
+<rect x="20" y="60" width="220" height="132" rx="4" fill="#e8eaf6" stroke="#3949ab" stroke-width="2"/>
+<line x1="20" y1="100" x2="240" y2="100" stroke="#3949ab" stroke-width="2"/>
+<text x="130.0" y="87" font-size="17" font-weight="700" fill="#1b1b1f" text-anchor="middle" text-decoration="underline">ana : Conductor</text>
+<text x="34" y="121" font-size="15" fill="#1b1b1f">dni = <tspan font-weight="700">"12345678Z"</tspan></text>
+<text x="34" y="147" font-size="15" fill="#1b1b1f">nombre = <tspan font-weight="700">"Ana"</tspan></text>
+<rect x="350" y="60" width="200" height="132" rx="4" fill="#e0f2f1" stroke="#00897b" stroke-width="2"/>
+<line x1="350" y1="100" x2="550" y2="100" stroke="#00897b" stroke-width="2"/>
+<text x="450.0" y="87" font-size="17" font-weight="700" fill="#1b1b1f" text-anchor="middle" text-decoration="underline">a1 : Alquiler</text>
+<text x="364" y="121" font-size="15" fill="#1b1b1f">dias = <tspan font-weight="700">3</tspan></text>
+<rect x="640" y="60" width="240" height="132" rx="4" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+<line x1="640" y1="100" x2="880" y2="100" stroke="#e65100" stroke-width="2"/>
+<text x="760.0" y="87" font-size="17" font-weight="700" fill="#1b1b1f" text-anchor="middle" text-decoration="underline">focus : Coche</text>
+<text x="654" y="121" font-size="15" fill="#1b1b1f">matricula = <tspan font-weight="700">"5671BCD"</tspan></text>
+<text x="654" y="147" font-size="15" fill="#1b1b1f">marca = <tspan font-weight="700">"Ford"</tspan></text>
+<text x="654" y="173" font-size="15" fill="#1b1b1f">modelo = <tspan font-weight="700">"Focus"</tspan></text>
+<line x1="240" y1="306.0" x2="350" y2="306.0" stroke="#455a64" stroke-width="2.5"/>
+<line x1="550" y1="306.0" x2="640" y2="306.0" stroke="#455a64" stroke-width="2.5"/>
+<text x="295.0" y="298.0" font-size="13" fill="#455a64" text-anchor="middle" font-style="italic">conductor</text>
+<text x="595.0" y="298.0" font-size="13" fill="#455a64" text-anchor="middle" font-style="italic">vehiculo</text>
+<rect x="20" y="240" width="220" height="132" rx="4" fill="#e8eaf6" stroke="#3949ab" stroke-width="2"/>
+<line x1="20" y1="280" x2="240" y2="280" stroke="#3949ab" stroke-width="2"/>
+<text x="130.0" y="267" font-size="17" font-weight="700" fill="#1b1b1f" text-anchor="middle" text-decoration="underline">luis : Conductor</text>
+<text x="34" y="301" font-size="15" fill="#1b1b1f">dni = <tspan font-weight="700">"87654321X"</tspan></text>
+<text x="34" y="327" font-size="15" fill="#1b1b1f">nombre = <tspan font-weight="700">"Luis"</tspan></text>
+<rect x="350" y="240" width="200" height="132" rx="4" fill="#e0f2f1" stroke="#00897b" stroke-width="2"/>
+<line x1="350" y1="280" x2="550" y2="280" stroke="#00897b" stroke-width="2"/>
+<text x="450.0" y="267" font-size="17" font-weight="700" fill="#1b1b1f" text-anchor="middle" text-decoration="underline">a2 : Alquiler</text>
+<text x="364" y="301" font-size="15" fill="#1b1b1f">dias = <tspan font-weight="700">2</tspan></text>
+<rect x="640" y="240" width="240" height="132" rx="4" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+<line x1="640" y1="280" x2="880" y2="280" stroke="#e65100" stroke-width="2"/>
+<text x="760.0" y="267" font-size="17" font-weight="700" fill="#1b1b1f" text-anchor="middle" text-decoration="underline">fh : Camion</text>
+<text x="654" y="301" font-size="15" fill="#1b1b1f">matricula = <tspan font-weight="700">"1234XYZ"</tspan></text>
+<text x="654" y="327" font-size="15" fill="#1b1b1f">marca = <tspan font-weight="700">"Volvo"</tspan></text>
+<text x="654" y="353" font-size="15" fill="#1b1b1f">modelo = <tspan font-weight="700">"FH"</tspan></text>
+<text x="450.0" y="414" font-size="14" fill="#546e7a" text-anchor="middle" font-style="italic">Cada línea es un enlace: una instancia de la asociación entre dos objetos concretos</text>
+</g></svg>

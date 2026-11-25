@@ -19,22 +19,25 @@ Es la continuación natural del curso de [**Programación Orientada a Objetos**]
 ### Parte II · Diagramas de clases
 
 3. **Clases y objetos en UML**: atributos, métodos, visibilidad e instanciación.
-4. **Relaciones** *(en preparación)*: asociación, navegabilidad, cardinalidad, agregación, composición, dependencia y herencia.
-5. **Clases abstractas, interfaces y paquetes** *(en preparación)*.
-6. **Del enunciado al diagrama** *(en preparación)*: un método para modelar y para interpretar diagramas.
-7. **Ingeniería directa e inversa** *(en preparación)*: de diagrama a código y de código a diagrama.
+4. **Atributos, operaciones y tipos en detalle**: multiplicidad, atributos derivados, enumeraciones, restricciones y cohesión.
+5. **Asociaciones**: nombre, roles, multiplicidad, navegabilidad, clases de asociación y diagrama de objetos con enlaces.
+6. **Agregación, composición y dependencia**: relaciones todo-parte y de uso.
+7. **Herencia, clases abstractas e interfaces** *(en preparación)*.
+8. **Paquetes y organización del modelo** *(en preparación)*.
+9. **Del enunciado al diagrama** *(en preparación)*: un método para modelar y para interpretar diagramas.
+10. **Ingeniería directa e inversa** *(en preparación)*: de diagrama a código y de código a diagrama.
 
 ### Parte III · Diagramas de comportamiento
 
-8. **Panorama de los diagramas de comportamiento** *(en preparación)*.
-9. **Casos de uso** *(en preparación)*.
-10. **Diagramas de interacción** *(en preparación)*: secuencia y colaboración.
-11. **Diagramas de actividades** *(en preparación)*.
-12. **Diagramas de estados** *(en preparación)*.
+11. **Panorama de los diagramas de comportamiento** *(en preparación)*.
+12. **Casos de uso** *(en preparación)*.
+13. **Diagramas de interacción** *(en preparación)*: secuencia y colaboración.
+14. **Diagramas de actividades** *(en preparación)*.
+15. **Diagramas de estados** *(en preparación)*.
 
 ### Parte IV · Puesta en práctica
 
-13. **Caso práctico integrado** *(en preparación)*: del requisito a todos los diagramas.
+16. **Caso práctico integrado** *(en preparación)*: del requisito a todos los diagramas.
 
 [:material-book-open-page-variant: Comenzar el curso](capitulos/01-introduccion.md){ .md-button .md-button--primary }
 

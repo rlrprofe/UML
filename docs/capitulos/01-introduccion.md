@@ -77,14 +77,14 @@ En este curso estudiaremos los diagramas resaltados, que son los que se usan a d
 
 | Diagrama | Familia | Pregunta que responde | Capítulos |
 |---|---|---|---|
-| **Clases** | Estructura | ¿Qué clases hay, qué datos y operaciones tienen y cómo se relacionan? | 3 a 7 |
-| **Objetos** | Estructura | ¿Cómo son los objetos concretos en un instante dado? | 3 |
-| **Paquetes** | Estructura | ¿Cómo se agrupan las clases? | 5 |
-| **Casos de uso** | Comportamiento | ¿Qué puede hacer cada usuario con el sistema? | 9 |
-| **Secuencia** | Comportamiento (interacción) | ¿Qué mensajes se envían los objetos y en qué orden? | 10 |
-| **Colaboración** (comunicación) | Comportamiento (interacción) | ¿Qué objetos colaboran y qué mensajes se envían? | 10 |
-| **Actividades** | Comportamiento | ¿Qué pasos sigue un proceso y qué decisiones hay? | 11 |
-| **Estados** | Comportamiento | ¿Por qué estados pasa un objeto durante su vida? | 12 |
+| **Clases** | Estructura | ¿Qué clases hay, qué datos y operaciones tienen y cómo se relacionan? | 3 a 10 |
+| **Objetos** | Estructura | ¿Cómo son los objetos concretos en un instante dado? | 3 y 5 |
+| **Paquetes** | Estructura | ¿Cómo se agrupan las clases? | 8 |
+| **Casos de uso** | Comportamiento | ¿Qué puede hacer cada usuario con el sistema? | 12 |
+| **Secuencia** | Comportamiento (interacción) | ¿Qué mensajes se envían los objetos y en qué orden? | 13 |
+| **Colaboración** (comunicación) | Comportamiento (interacción) | ¿Qué objetos colaboran y qué mensajes se envían? | 13 |
+| **Actividades** | Comportamiento | ¿Qué pasos sigue un proceso y qué decisiones hay? | 14 |
+| **Estados** | Comportamiento | ¿Por qué estados pasa un objeto durante su vida? | 15 |
 
 ### Un mismo sistema, tres miradas
 
@@ -160,7 +160,7 @@ flowchart LR
 
 - **Análisis**: los casos de uso y los diagramas de actividades recogen *qué* necesita el cliente.
 - **Diseño**: los diagramas de clases, de secuencia y de estados definen *cómo* se organiza el sistema.
-- **Implementación**: el diagrama de clases se traduce a código (**ingeniería directa**), y a veces se hace el camino contrario (**ingeniería inversa**). Lo verás en el capítulo 7.
+- **Implementación**: el diagrama de clases se traduce a código (**ingeniería directa**), y a veces se hace el camino contrario (**ingeniería inversa**). Lo verás en el capítulo 10.
 - **Pruebas**: cada caso de uso es una fuente de casos de prueba.
 - **Mantenimiento**: los diagramas permiten entender un sistema ajeno sin leer todo el código.
 

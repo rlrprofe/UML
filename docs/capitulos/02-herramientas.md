@@ -46,7 +46,7 @@ En este curso trabajaremos con dos herramientas que se complementan, y veremos o
 | **Ideal para** | Aprender la notación, bocetos y diagramas con aspecto cuidado | Diagramas que viven junto al código y cambian a menudo |
 
 !!! info "¿Son herramientas CASE?"
-    Hablando con rigor, draw.io y PlantUML son herramientas de **diagramación**: dibujan UML, pero no mantienen un repositorio de modelo ni sincronizan con el código. Son perfectas para aprender y para el día a día. Las capacidades de generación de código e ingeniería inversa se estudian en el capítulo 7, donde se indica la herramienta con la que se practica.
+    Hablando con rigor, draw.io y PlantUML son herramientas de **diagramación**: dibujan UML, pero no mantienen un repositorio de modelo ni sincronizan con el código. Son perfectas para aprender y para el día a día. Las capacidades de generación de código e ingeniería inversa se estudian en el capítulo 10, donde se indica la herramienta con la que se practica.
 
 ## 2.4. draw.io
 
@@ -137,7 +137,7 @@ La contrapartida: tienes que aprender su sintaxis, y no controlas al milímetro 
 ## 2.6. Otras opciones: Mermaid y herramientas CASE completas
 
 - **Mermaid** es otro lenguaje de diagramas basado en texto, muy parecido en espíritu a PlantUML. Los diagramas de este curso están escritos con él, y plataformas como GitHub lo muestran directamente en los archivos Markdown. Más información en [mermaid.js.org](https://mermaid.js.org/).
-- **Herramientas CASE completas.** Cuando se necesita generar código o hacer ingeniería inversa se suele recurrir a herramientas de modelado como **Astah UML**, **StarUML**, **Modelio** o **Papyrus** (un módulo de Eclipse). Cada una tiene su propia licencia, así que conviene comprobar las condiciones antes de elegirla: por ejemplo, Astah ofrece licencia gratuita a estudiantes con correo académico. Las veremos en el capítulo 7.
+- **Herramientas CASE completas.** Cuando se necesita generar código o hacer ingeniería inversa se suele recurrir a herramientas de modelado como **Astah UML**, **StarUML**, **Modelio** o **Papyrus** (un módulo de Eclipse). Cada una tiene su propia licencia, así que conviene comprobar las condiciones antes de elegirla: por ejemplo, Astah ofrece licencia gratuita a estudiantes con correo académico. Las veremos en el capítulo 10.
 
 ## Resumen del capítulo
 
