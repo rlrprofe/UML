@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 910 352" width="910" height="352" role="img" aria-labelledby="t d">
+<title id="t">Diagrama de objetos: tres coches</title>
+<desc id="d">Tres objetos de la clase Coche con los valores concretos de sus atributos.</desc>
+<g font-family="Roboto, 'Segoe UI', Helvetica, Arial, sans-serif">
+<rect x="20" y="50" width="270" height="252" rx="4" fill="#e8eaf6" stroke="#3949ab" stroke-width="2"/>
+<line x1="20" y1="94" x2="290" y2="94" stroke="#3949ab" stroke-width="2"/>
+<text x="155.0" y="78" font-size="18" font-weight="700" fill="#1b1b1f" text-anchor="middle" text-decoration="underline">coche1 : Coche</text>
+<text x="36" y="115" font-size="15" fill="#1b1b1f">matricula = <tspan font-weight="700">"5671BCD"</tspan></text>
+<text x="36" y="143" font-size="15" fill="#1b1b1f">marca = <tspan font-weight="700">"Ford"</tspan></text>
+<text x="36" y="171" font-size="15" fill="#1b1b1f">modelo = <tspan font-weight="700">"Focus"</tspan></text>
+<text x="36" y="199" font-size="15" fill="#1b1b1f">color = <tspan font-weight="700">"rojo"</tspan></text>
+<text x="36" y="227" font-size="15" fill="#1b1b1f">potencia = <tspan font-weight="700">130</tspan></text>
+<text x="36" y="255" font-size="15" fill="#1b1b1f">velocidad = <tspan font-weight="700">60</tspan></text>
+<text x="36" y="283" font-size="15" fill="#1b1b1f">enMarcha = <tspan font-weight="700">true</tspan></text>
+<rect x="320" y="50" width="270" height="252" rx="4" fill="#e0f2f1" stroke="#00897b" stroke-width="2"/>
+<line x1="320" y1="94" x2="590" y2="94" stroke="#00897b" stroke-width="2"/>
+<text x="455.0" y="78" font-size="18" font-weight="700" fill="#1b1b1f" text-anchor="middle" text-decoration="underline">coche2 : Coche</text>
+<text x="336" y="115" font-size="15" fill="#1b1b1f">matricula = <tspan font-weight="700">"4410KLM"</tspan></text>
+<text x="336" y="143" font-size="15" fill="#1b1b1f">marca = <tspan font-weight="700">"Seat"</tspan></text>
+<text x="336" y="171" font-size="15" fill="#1b1b1f">modelo = <tspan font-weight="700">"Ibiza"</tspan></text>
+<text x="336" y="199" font-size="15" fill="#1b1b1f">color = <tspan font-weight="700">"azul"</tspan></text>
+<text x="336" y="227" font-size="15" fill="#1b1b1f">potencia = <tspan font-weight="700">95</tspan></text>
+<text x="336" y="255" font-size="15" fill="#1b1b1f">velocidad = <tspan font-weight="700">0</tspan></text>
+<text x="336" y="283" font-size="15" fill="#1b1b1f">enMarcha = <tspan font-weight="700">false</tspan></text>
+<rect x="620" y="50" width="270" height="252" rx="4" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+<line x1="620" y1="94" x2="890" y2="94" stroke="#e65100" stroke-width="2"/>
+<text x="755.0" y="78" font-size="18" font-weight="700" fill="#1b1b1f" text-anchor="middle" text-decoration="underline">coche3 : Coche</text>
+<text x="636" y="115" font-size="15" fill="#1b1b1f">matricula = <tspan font-weight="700">"8820HTX"</tspan></text>
+<text x="636" y="143" font-size="15" fill="#1b1b1f">marca = <tspan font-weight="700">"Renault"</tspan></text>
+<text x="636" y="171" font-size="15" fill="#1b1b1f">modelo = <tspan font-weight="700">"Clio"</tspan></text>
+<text x="636" y="199" font-size="15" fill="#1b1b1f">color = <tspan font-weight="700">"blanco"</tspan></text>
+<text x="636" y="227" font-size="15" fill="#1b1b1f">potencia = <tspan font-weight="700">90</tspan></text>
+<text x="636" y="255" font-size="15" fill="#1b1b1f">velocidad = <tspan font-weight="700">110</tspan></text>
+<text x="636" y="283" font-size="15" fill="#1b1b1f">enMarcha = <tspan font-weight="700">true</tspan></text>
+<text x="455.0" y="336" font-size="14" fill="#546e7a" text-anchor="middle" font-style="italic">Tres objetos de la misma clase: misma estructura, valores distintos</text>
+</g></svg>
