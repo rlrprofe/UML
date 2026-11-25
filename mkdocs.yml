@@ -1,8 +1,8 @@
 site_name: UML · Diagramas de clases y de comportamiento
 site_description: Curso de modelado con UML para Entornos de Desarrollo - diagramas de clases y diagramas de comportamiento
-site_url: https://rlrprofe.github.io/uml/
-repo_url: https://github.com/rlrprofe/uml
-repo_name: rlrprofe/uml
+site_url: https://rlrprofe.github.io/UML/
+repo_url: https://github.com/rlrprofe/UML
+repo_name: rlrprofe/UML
 copyright: UML · Entornos de Desarrollo
 
 theme:
@@ -61,3 +61,6 @@ nav:
       - "2. Herramientas CASE": capitulos/02-herramientas.md
   - "Parte II · Diagramas de clases":
       - "3. Clases y objetos en UML": capitulos/03-clases-objetos.md
+      - "4. Atributos, operaciones y tipos": capitulos/04-atributos-operaciones.md
+      - "5. Asociaciones": capitulos/05-asociaciones.md
+      - "6. Agregación, composición y dependencia": capitulos/06-agregacion-composicion-dependencia.md
