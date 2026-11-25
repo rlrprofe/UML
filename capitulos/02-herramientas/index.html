@@ -1,0 +1,1352 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Curso de modelado con UML para Entornos de Desarrollo - diagramas de clases y diagramas de comportamiento">
+      
+      
+      
+        <link rel="canonical" href="https://rlrprofe.github.io/UML/capitulos/02-herramientas/">
+      
+      
+        <link rel="prev" href="../01-introduccion/">
+      
+      
+        <link rel="next" href="../03-clases-objetos/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>2. Herramientas CASE - UML · Diagramas de clases y de comportamiento</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-herramientas-case" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="UML · Diagramas de clases y de comportamiento" class="md-header__button md-logo" aria-label="UML · Diagramas de clases y de comportamiento" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UML · Diagramas de clases y de comportamiento
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Herramientas CASE
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/rlrprofe/UML" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rlrprofe/UML
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="UML · Diagramas de clases y de comportamiento" class="md-nav__button md-logo" aria-label="UML · Diagramas de clases y de comportamiento" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UML · Diagramas de clases y de comportamiento
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/rlrprofe/UML" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rlrprofe/UML
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte I · Fundamentos de UML
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte I · Fundamentos de UML
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-introduccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción a UML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Herramientas CASE
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Herramientas CASE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-que-es-una-herramienta-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Qué es una herramienta CASE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-como-elegir-una-herramienta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Cómo elegir una herramienta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-las-herramientas-del-curso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Las herramientas del curso
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-drawio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. draw.io
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4. draw.io">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primeros-pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primeros pasos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dibujar-una-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dibujar una clase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guardar-y-exportar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guardar y exportar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-plantuml-en-visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. PlantUML en Visual Studio Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5. PlantUML en Visual Studio Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instalación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tu-primer-diagrama" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tu primer diagrama
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#una-relacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Una relación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-merece-la-pena" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por qué merece la pena
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-otras-opciones-mermaid-y-herramientas-case-completas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. Otras opciones: Mermaid y herramientas CASE completas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte II · Diagramas de clases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte II · Diagramas de clases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-clases-objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Clases y objetos en UML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-atributos-operaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Atributos, operaciones y tipos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-asociaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Asociaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-agregacion-composicion-dependencia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Agregación, composición y dependencia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-que-es-una-herramienta-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Qué es una herramienta CASE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-como-elegir-una-herramienta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Cómo elegir una herramienta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-las-herramientas-del-curso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Las herramientas del curso
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-drawio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. draw.io
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4. draw.io">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primeros-pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primeros pasos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dibujar-una-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dibujar una clase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guardar-y-exportar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guardar y exportar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-plantuml-en-visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. PlantUML en Visual Studio Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5. PlantUML en Visual Studio Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instalación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tu-primer-diagrama" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tu primer diagrama
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#una-relacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Una relación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-merece-la-pena" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por qué merece la pena
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-otras-opciones-mermaid-y-herramientas-case-completas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. Otras opciones: Mermaid y herramientas CASE completas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="2-herramientas-case">2. Herramientas CASE<a class="headerlink" href="#2-herramientas-case" title="Permanent link">&para;</a></h1>
+<h2 id="21-que-es-una-herramienta-case">2.1. Qué es una herramienta CASE<a class="headerlink" href="#21-que-es-una-herramienta-case" title="Permanent link">&para;</a></h2>
+<p><strong>CASE</strong> son las siglas de <em>Computer-Aided Software Engineering</em>: ingeniería del software asistida por ordenador. Una <strong>herramienta CASE</strong> es cualquier programa que ayuda a realizar alguna tarea del desarrollo de software: analizar, diseñar, generar código, probar o documentar.</p>
+<p>Las que dan soporte a UML permiten, según su nivel, cosas como estas:</p>
+<table>
+<thead>
+<tr>
+<th>Capacidad</th>
+<th>Qué aporta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dibujo</strong></td>
+<td>Paleta de símbolos UML, conectores que se «pegan» a las cajas, plantillas</td>
+</tr>
+<tr>
+<td><strong>Validación</strong></td>
+<td>Avisa si el diagrama incumple las reglas de la notación</td>
+</tr>
+<tr>
+<td><strong>Repositorio del modelo</strong></td>
+<td>Guarda los elementos una sola vez y los reutiliza en varios diagramas: si renombras una clase, cambia en todos</td>
+</tr>
+<tr>
+<td><strong>Generación de código</strong> (ingeniería directa)</td>
+<td>Crea el esqueleto del código a partir del diagrama</td>
+</tr>
+<tr>
+<td><strong>Ingeniería inversa</strong></td>
+<td>Crea el diagrama a partir del código existente</td>
+</tr>
+<tr>
+<td><strong>Documentación y exportación</strong></td>
+<td>Imágenes, PDF o webs a partir del modelo</td>
+</tr>
+<tr>
+<td><strong>Trabajo en equipo</strong></td>
+<td>Compartir y versionar modelos</td>
+</tr>
+</tbody>
+</table>
+<p>No todas las herramientas ofrecen todo: unas son simples <strong>programas de dibujo</strong> con símbolos UML, y otras son <strong>herramientas CASE completas</strong> con repositorio de modelo y sincronización con el código.</p>
+<h2 id="22-como-elegir-una-herramienta">2.2. Cómo elegir una herramienta<a class="headerlink" href="#22-como-elegir-una-herramienta" title="Permanent link">&para;</a></h2>
+<p>No existe «la mejor»: depende de para qué la vayas a usar. Estos son los criterios más habituales:</p>
+<ul>
+<li><strong>Coste y licencia</strong>: ¿es gratuita? ¿también para docentes y para uso profesional?</li>
+<li><strong>Plataforma</strong>: ¿funciona en tu sistema operativo? ¿en el navegador?</li>
+<li><strong>Tipos de diagrama</strong>: ¿incluye los que necesitas (clases, casos de uso, secuencia, actividades, estados)?</li>
+<li><strong>Generación de código e ingeniería inversa</strong>: ¿para qué lenguajes?</li>
+<li><strong>Formato de archivo</strong>: ¿es abierto y legible? ¿se puede guardar en <strong>Git</strong> y ver qué cambió entre versiones?</li>
+<li><strong>Curva de aprendizaje</strong>: ¿cuánto tarda alguien en producir su primer diagrama?</li>
+</ul>
+<h2 id="23-las-herramientas-del-curso">2.3. Las herramientas del curso<a class="headerlink" href="#23-las-herramientas-del-curso" title="Permanent link">&para;</a></h2>
+<p>En este curso trabajaremos con dos herramientas que se complementan, y veremos otras para generar código.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>draw.io</strong></th>
+<th><strong>PlantUML en VS Code</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Forma de trabajar</strong></td>
+<td>Dibujas arrastrando símbolos</td>
+<td>Escribes el diagrama como texto y se dibuja solo</td>
+</tr>
+<tr>
+<td><strong>Coste</strong></td>
+<td>Gratuita</td>
+<td>Gratuita</td>
+</tr>
+<tr>
+<td><strong>Dónde funciona</strong></td>
+<td>Navegador y aplicación de escritorio</td>
+<td>Dentro de Visual Studio Code</td>
+</tr>
+<tr>
+<td><strong>Tipos de diagrama</strong></td>
+<td>Todos, con bibliotecas de formas UML</td>
+<td>Clases, casos de uso, secuencia, actividades, estados…</td>
+</tr>
+<tr>
+<td><strong>Archivo</strong></td>
+<td><code>.drawio</code> (XML)</td>
+<td><code>.puml</code> (texto plano)</td>
+</tr>
+<tr>
+<td><strong>Versionable en Git</strong></td>
+<td>Posible, pero los cambios son poco legibles</td>
+<td>Sí: se ve línea a línea qué cambió</td>
+</tr>
+<tr>
+<td><strong>Colocación de las cajas</strong></td>
+<td>Tú decides</td>
+<td>Automática</td>
+</tr>
+<tr>
+<td><strong>Genera código / ingeniería inversa</strong></td>
+<td>No</td>
+<td>No directamente (existen utilidades externas)</td>
+</tr>
+<tr>
+<td><strong>Ideal para</strong></td>
+<td>Aprender la notación, bocetos y diagramas con aspecto cuidado</td>
+<td>Diagramas que viven junto al código y cambian a menudo</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">¿Son herramientas CASE?</p>
+<p>Hablando con rigor, draw.io y PlantUML son herramientas de <strong>diagramación</strong>: dibujan UML, pero no mantienen un repositorio de modelo ni sincronizan con el código. Son perfectas para aprender y para el día a día. Las capacidades de generación de código e ingeniería inversa se estudian en el capítulo 10, donde se indica la herramienta con la que se practica.</p>
+</div>
+<h2 id="24-drawio">2.4. draw.io<a class="headerlink" href="#24-drawio" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.drawio.com/">draw.io</a> (también llamado <em>diagrams.net</em>) es un editor de diagramas gratuito. Se usa <strong>en el navegador</strong>, sin instalar nada, o como <strong>aplicación de escritorio</strong>.</p>
+<h3 id="primeros-pasos">Primeros pasos<a class="headerlink" href="#primeros-pasos" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Abre la aplicación y crea un diagrama en blanco (o abre uno existente con <code>.drawio</code>).</li>
+<li>Activa las <strong>formas UML</strong>: en la parte inferior de la barra lateral izquierda pulsa <strong>Más formas</strong> (<em>More Shapes</em>) y marca <strong>UML</strong> (y, si quieres, <strong>UML 2.5</strong>).</li>
+<li>También puedes partir de una <strong>plantilla</strong>: menú <strong>Organizar → Insertar → Plantilla</strong> y busca en las categorías <em>Software</em> y <em>UML</em>.</li>
+</ol>
+<h3 id="dibujar-una-clase">Dibujar una clase<a class="headerlink" href="#dibujar-una-clase" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Arrastra al lienzo la forma <strong>Class</strong> de la biblioteca UML.</li>
+<li>Haz doble clic en el nombre y escribe <code>Coche</code>.</li>
+<li>En el compartimento de atributos escribe, una línea por atributo: <code>- matricula : String</code>, <code>- velocidad : int</code>.</li>
+<li>En el compartimento de operaciones escribe <code>+ acelerar(incremento : int) : void</code> y <code>+ getVelocidad() : int</code>.</li>
+<li>Guarda el diagrama con <strong>Archivo → Guardar</strong> (formato <code>.drawio</code>).</li>
+</ol>
+<h3 id="guardar-y-exportar">Guardar y exportar<a class="headerlink" href="#guardar-y-exportar" title="Permanent link">&para;</a></h3>
+<ul>
+<li>El archivo <code>.drawio</code> es el <strong>editable</strong>: guárdalo siempre.</li>
+<li>Para insertar el diagrama en un documento, usa <strong>Archivo → Exportar como</strong> y elige <strong>PNG</strong>, <strong>SVG</strong> o <strong>PDF</strong>.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Consejos</p>
+<ul>
+<li>Usa los <strong>conectores</strong> de la barra (no líneas sueltas) para que las flechas sigan a las cajas cuando las muevas.</li>
+<li>Si borras una clase, revisa que no queden flechas colgando.</li>
+<li>Una carpeta por proyecto y un nombre por diagrama (<code>clases-alquiler.drawio</code>) te ahorrará muchos disgustos.</li>
+</ul>
+</div>
+<h2 id="25-plantuml-en-visual-studio-code">2.5. PlantUML en Visual Studio Code<a class="headerlink" href="#25-plantuml-en-visual-studio-code" title="Permanent link">&para;</a></h2>
+<p><strong>PlantUML</strong> es un lenguaje que describe diagramas UML <strong>con texto</strong>. Tú escribes qué elementos hay y cómo se relacionan, y la herramienta decide cómo dibujarlos. La extensión de VS Code <a href="https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml">PlantUML (jebbs)</a> añade a VS Code la vista previa y la exportación.</p>
+<h3 id="instalacion">Instalación<a class="headerlink" href="#instalacion" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Instala <strong>Java</strong>: el JDK del módulo te sirve. Compruébalo con <code>java -version</code> en una terminal.</li>
+<li>En VS Code abre <strong>Extensiones</strong> (<code>Ctrl+Shift+X</code>), busca <strong>PlantUML</strong> del autor <em>jebbs</em> e instálala.</li>
+<li>Según la ficha de la extensión, para dibujar en local necesita Java y <strong>Graphviz</strong>; en Windows incluye el <code>plantuml.jar</code> y Graphviz, y en otros sistemas hay que instalar Graphviz aparte.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Si no puedes instalar Graphviz</p>
+<p>La extensión permite cambiar en los ajustes el modo de dibujo a un <strong>servidor PlantUML</strong> (busca <code>plantuml render</code> en los ajustes). Así no necesitas instalar nada más, aunque el texto del diagrama se envía a ese servidor.</p>
+</div>
+<h3 id="tu-primer-diagrama">Tu primer diagrama<a class="headerlink" href="#tu-primer-diagrama" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Crea un archivo <code>coche.puml</code>.</li>
+<li>Escribe este contenido:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam classAttributeIconSize 0
+
+class Coche {
+  - matricula : String
+  - velocidad : int
+  + acelerar(incremento : int) : void
+  + getVelocidad() : int
+}
+@enduml
+</code></pre></div>
+<ol>
+<li>Pulsa <code>Alt+D</code> para abrir la <strong>vista previa</strong>: verás la clase dibujada y se actualiza al escribir.</li>
+<li>Para guardar la imagen, abre la <strong>paleta de comandos</strong> (<code>Ctrl+Shift+P</code>) y ejecuta <strong>PlantUML: Export Current Diagram</strong>.</li>
+</ol>
+<p>Todo diagrama PlantUML va entre <code>@startuml</code> y <code>@enduml</code>. La línea <code>skinparam classAttributeIconSize 0</code> hace que la visibilidad se vea con los símbolos <code>+</code> y <code>-</code> en lugar de los iconos de colores.</p>
+<h3 id="una-relacion">Una relación<a class="headerlink" href="#una-relacion" title="Permanent link">&para;</a></h3>
+<p>Las relaciones se escriben con flechas hechas de caracteres. Por ejemplo, una flota que agrupa vehículos:</p>
+<div class="highlight"><pre><span></span><code>@startuml
+class Flota
+class Vehiculo
+Flota "1" o-- "0..*" Vehiculo : agrupa
+@enduml
+</code></pre></div>
+<p>Irás aprendiendo cada flecha en los capítulos siguientes. A lo largo del curso, cada diagrama importante incluye su código PlantUML en una pestaña para que lo copies y lo pruebes.</p>
+<h3 id="por-que-merece-la-pena">Por qué merece la pena<a class="headerlink" href="#por-que-merece-la-pena" title="Permanent link">&para;</a></h3>
+<ul>
+<li>El <code>.puml</code> es <strong>texto</strong>: lo guardas en el repositorio junto al código y con <code>git diff</code> ves exactamente qué cambió.</li>
+<li>No pierdes tiempo colocando cajas ni alineando flechas.</li>
+<li>Es fácil corregir y reutilizar: copiar y pegar un fragmento es más rápido que redibujar.</li>
+</ul>
+<p>La contrapartida: tienes que aprender su sintaxis, y no controlas al milímetro dónde queda cada caja.</p>
+<h2 id="26-otras-opciones-mermaid-y-herramientas-case-completas">2.6. Otras opciones: Mermaid y herramientas CASE completas<a class="headerlink" href="#26-otras-opciones-mermaid-y-herramientas-case-completas" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Mermaid</strong> es otro lenguaje de diagramas basado en texto, muy parecido en espíritu a PlantUML. Los diagramas de este curso están escritos con él, y plataformas como GitHub lo muestran directamente en los archivos Markdown. Más información en <a href="https://mermaid.js.org/">mermaid.js.org</a>.</li>
+<li><strong>Herramientas CASE completas.</strong> Cuando se necesita generar código o hacer ingeniería inversa se suele recurrir a herramientas de modelado como <strong>Astah UML</strong>, <strong>StarUML</strong>, <strong>Modelio</strong> o <strong>Papyrus</strong> (un módulo de Eclipse). Cada una tiene su propia licencia, así que conviene comprobar las condiciones antes de elegirla: por ejemplo, Astah ofrece licencia gratuita a estudiantes con correo académico. Las veremos en el capítulo 10.</li>
+</ul>
+<h2 id="resumen-del-capitulo">Resumen del capítulo<a class="headerlink" href="#resumen-del-capitulo" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Una herramienta <strong>CASE</strong> asiste en alguna tarea del desarrollo; las que soportan UML van desde simples editores de dibujo hasta herramientas con repositorio de modelo, generación de código e ingeniería inversa.</li>
+<li>Se elige según coste, plataforma, tipos de diagrama, formato de archivo, generación de código y facilidad de uso.</li>
+<li><strong>draw.io</strong> dibuja arrastrando símbolos: es ideal para aprender la notación.</li>
+<li><strong>PlantUML en VS Code</strong> dibuja a partir de texto: es ideal para diagramas que viven junto al código y se versionan con Git.</li>
+</ul>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<p><strong>Actividad 1.</strong> Instala PlantUML en VS Code y dibuja con él la clase <code>Conductor</code> (atributos privados <code>dni</code> y <code>nombre</code> de tipo <code>String</code>; operaciones públicas <code>getDni()</code> y <code>getNombre()</code>). Después dibújala también en draw.io.</p>
+<details class="success">
+<summary>Solución</summary>
+<p>Código PlantUML:</p>
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam classAttributeIconSize 0
+
+class Conductor {
+  - dni : String
+  - nombre : String
+  + getDni() : String
+  + getNombre() : String
+}
+@enduml
+</code></pre></div>
+<p>Y el resultado esperado en cualquiera de las dos herramientas:</p>
+<pre class="mermaid"><code>classDiagram
+    class Conductor {
+        -dni : String
+        -nombre : String
+        +getDni() String
+        +getNombre() String
+    }</code></pre>
+</details>
+<p><strong>Actividad 2.</strong> Elige la herramienta más adecuada en cada caso y justifica tu respuesta (draw.io, PlantUML o una herramienta CASE completa):</p>
+<ol>
+<li>Necesitas un diagrama de clases con aspecto cuidado para una presentación, y quieres colocar cada caja donde tú decidas.</li>
+<li>Quieres que los diagramas del proyecto se guarden en Git y que, al revisar una modificación, se vea qué cambió.</li>
+<li>Tienes un proyecto Java de 40 clases y necesitas obtener su diagrama automáticamente.</li>
+</ol>
+<details class="success">
+<summary>Solución</summary>
+<ol>
+<li><strong>draw.io</strong>: controlas la posición y el aspecto de cada elemento.</li>
+<li><strong>PlantUML</strong>: el archivo es texto, así que <code>git diff</code> muestra los cambios línea a línea.</li>
+<li><strong>Herramienta CASE con ingeniería inversa</strong> (o una utilidad que la ofrezca): dibujar 40 clases a mano es lento y propenso a errores.</li>
+</ol>
+</details>
+<p><strong>Actividad 3.</strong> Guarda el archivo <code>coche.puml</code> en un repositorio Git y haz un <em>commit</em>. Después añade a la clase una operación <code>frenar(decremento : int) : void</code>, y comprueba con <code>git diff</code> qué ha cambiado.</p>
+<details class="success">
+<summary>Solución</summary>
+<div class="highlight"><pre><span></span><code><span class="n">git</span> <span class="n">init</span>
+<span class="n">git</span> <span class="n">add</span> <span class="n">coche</span><span class="p">.</span><span class="n">puml</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="n">-m</span> <span class="s2">"Diagrama de la clase Coche"</span>
+</code></pre></div>
+<p>Tras añadir la operación en el archivo, <code>git diff</code> mostrará solo la línea nueva:</p>
+<div class="highlight"><pre><span></span><code>+  + frenar(decremento : int) : void
+</code></pre></div>
+<p>Con un <code>.drawio</code> el mismo cambio aparecería como un bloque de XML difícil de leer. Esa es la ventaja de los diagramas en texto.</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      UML · Entornos de Desarrollo
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.indexes", "navigation.expand", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>

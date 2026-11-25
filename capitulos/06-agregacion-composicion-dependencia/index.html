@@ -1,0 +1,1724 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Curso de modelado con UML para Entornos de Desarrollo - diagramas de clases y diagramas de comportamiento">
+      
+      
+      
+        <link rel="canonical" href="https://rlrprofe.github.io/UML/capitulos/06-agregacion-composicion-dependencia/">
+      
+      
+        <link rel="prev" href="../05-asociaciones/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>6. Agregación, composición y dependencia - UML · Diagramas de clases y de comportamiento</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#6-agregacion-composicion-y-dependencia" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="UML · Diagramas de clases y de comportamiento" class="md-header__button md-logo" aria-label="UML · Diagramas de clases y de comportamiento" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UML · Diagramas de clases y de comportamiento
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              6. Agregación, composición y dependencia
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/rlrprofe/UML" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rlrprofe/UML
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="UML · Diagramas de clases y de comportamiento" class="md-nav__button md-logo" aria-label="UML · Diagramas de clases y de comportamiento" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UML · Diagramas de clases y de comportamiento
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/rlrprofe/UML" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rlrprofe/UML
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte I · Fundamentos de UML
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte I · Fundamentos de UML
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-introduccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción a UML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-herramientas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Herramientas CASE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte II · Diagramas de clases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte II · Diagramas de clases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-clases-objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Clases y objetos en UML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-atributos-operaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Atributos, operaciones y tipos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-asociaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Asociaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Agregación, composición y dependencia
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Agregación, composición y dependencia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-panorama-que-relaciones-hay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Panorama: ¿qué relaciones hay?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-agregacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Agregación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-composicion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3. Composición
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-agregacion-frente-a-composicion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4. Agregación frente a composición
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.4. Agregación frente a composición">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#para-decidir-en-un-caso-concreto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Para decidir en un caso concreto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-dependencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5. Dependencia
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.5. Dependencia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuando-aparece-una-dependencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cuándo aparece una dependencia?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-la-recepcion-del-taller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo: la recepción del taller
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otro-ejemplo-imprimir-una-factura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Otro ejemplo: imprimir una factura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencia-frente-a-asociacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencia frente a asociación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencias-y-acoplamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencias y acoplamiento
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66-guia-para-elegir-la-relacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6. Guía para elegir la relación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#67-el-modelo-de-la-empresa-de-alquiler-hasta-ahora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.7. El modelo de la empresa de alquiler hasta ahora
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-panorama-que-relaciones-hay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Panorama: ¿qué relaciones hay?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-agregacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Agregación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-composicion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3. Composición
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-agregacion-frente-a-composicion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4. Agregación frente a composición
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.4. Agregación frente a composición">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#para-decidir-en-un-caso-concreto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Para decidir en un caso concreto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-dependencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5. Dependencia
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.5. Dependencia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuando-aparece-una-dependencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cuándo aparece una dependencia?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-la-recepcion-del-taller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo: la recepción del taller
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otro-ejemplo-imprimir-una-factura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Otro ejemplo: imprimir una factura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencia-frente-a-asociacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencia frente a asociación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencias-y-acoplamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencias y acoplamiento
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66-guia-para-elegir-la-relacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6. Guía para elegir la relación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#67-el-modelo-de-la-empresa-de-alquiler-hasta-ahora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.7. El modelo de la empresa de alquiler hasta ahora
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="6-agregacion-composicion-y-dependencia">6. Agregación, composición y dependencia<a class="headerlink" href="#6-agregacion-composicion-y-dependencia" title="Permanent link">&para;</a></h1>
+<p>En el capítulo 5 viste la asociación simple: «un alquiler conoce a su vehículo». Pero no todas las conexiones entre objetos son iguales. Una <strong>flota</strong> <em>está formada por</em> vehículos; un <strong>alquiler</strong> <em>incluye</em> unos extras que no tendrían sentido sin él; una <strong>factura</strong> <em>usa</em> un alquiler solo mientras se imprime. UML distingue estos matices con tres relaciones nuevas: la <strong>agregación</strong>, la <strong>composición</strong> y la <strong>dependencia</strong>. Saber elegir entre ellas es una de las cosas que más se preguntan al interpretar o construir un diagrama de clases.</p>
+<h2 id="61-panorama-que-relaciones-hay">6.1. Panorama: ¿qué relaciones hay?<a class="headerlink" href="#61-panorama-que-relaciones-hay" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Relación</th>
+<th>Idea</th>
+<th>Se lee</th>
+<th>Línea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Asociación</strong></td>
+<td>Un objeto <strong>conoce</strong> a otro</td>
+<td>«tiene una referencia a»</td>
+<td><code>──────</code> (o <code>──────▶</code>)</td>
+</tr>
+<tr>
+<td><strong>Agregación</strong></td>
+<td>El todo <strong>agrupa</strong> partes que <strong>existen por sí solas</strong></td>
+<td>«está formado por»</td>
+<td><code>◇──────</code></td>
+</tr>
+<tr>
+<td><strong>Composición</strong></td>
+<td>El todo <strong>contiene</strong> partes que <strong>no existen sin él</strong></td>
+<td>«está compuesto de»</td>
+<td><code>◆──────</code></td>
+</tr>
+<tr>
+<td><strong>Dependencia</strong></td>
+<td>Un objeto <strong>usa</strong> a otro de forma <strong>temporal</strong></td>
+<td>«usa a»</td>
+<td><code>╌╌╌╌╌▶</code></td>
+</tr>
+<tr>
+<td>Herencia / realización</td>
+<td>Una clase <strong>es un tipo de</strong> otra</td>
+<td>«es un»</td>
+<td>Capítulo 7</td>
+</tr>
+</tbody>
+</table>
+<p>Las tres primeras son relaciones <strong>estructurales</strong> (se convierten en <strong>atributos</strong>); la dependencia es <strong>de uso</strong> (aparece en <strong>parámetros, variables locales o instanciaciones</strong>, no en campos).</p>
+<h2 id="62-agregacion">6.2. Agregación<a class="headerlink" href="#62-agregacion" title="Permanent link">&para;</a></h2>
+<p>La <strong>agregación</strong> es una relación <strong>todo–parte</strong> «débil»: un objeto (el <strong>todo</strong>) agrupa a otros (las <strong>partes</strong>), pero <strong>las partes tienen vida propia</strong>. Se dibuja con un <strong>rombo vacío</strong> en el extremo del todo.</p>
+<p>Una <code>Flota</code> agrupa vehículos, pero los vehículos <strong>existen antes</strong> de meterse en la flota y <strong>siguen existiendo</strong> si la flota se disuelve. En el <code>Main</code> del curso de POO los vehículos se crean fuera y la flota solo los recibe:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Diagrama</label><label for="__tabbed_1_2">PlantUML</label><label for="__tabbed_1_3">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>classDiagram
+    class Flota {
+        -nombre : String
+        +incorporar(v : Vehiculo) void
+        +retirar(v : Vehiculo) void
+    }
+    class Vehiculo {
+        -matricula : String
+    }
+    Flota "1" o-- "0..*" Vehiculo : agrupa</code></pre>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam classAttributeIconSize 0
+
+class Flota {
+  - nombre : String
+  + incorporar(v : Vehiculo) : void
+  + retirar(v : Vehiculo) : void
+}
+class Vehiculo {
+  - matricula : String
+}
+Flota "1" o-- "0..*" Vehiculo : agrupa
+@enduml
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Flota</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Vehiculo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vehiculos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Los vehículos llegan YA CREADOS desde fuera</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">incorporar</span><span class="p">(</span><span class="n">Vehiculo</span><span class="w"> </span><span class="n">vehiculo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">vehiculos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">vehiculo</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// En Main:</span>
+<span class="n">Vehiculo</span><span class="w"> </span><span class="n">focus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Coche</span><span class="p">(</span><span class="s">"5671BCD"</span><span class="p">,</span><span class="w"> </span><span class="s">"Ford"</span><span class="p">,</span><span class="w"> </span><span class="s">"Focus"</span><span class="p">,</span><span class="w"> </span><span class="s">"rojo"</span><span class="p">,</span><span class="w"> </span><span class="mi">130</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+<span class="n">Flota</span><span class="w"> </span><span class="n">flota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Flota</span><span class="p">(</span><span class="s">"Flota Centro"</span><span class="p">);</span>
+<span class="n">flota</span><span class="p">.</span><span class="na">incorporar</span><span class="p">(</span><span class="n">focus</span><span class="p">);</span>
+<span class="n">flota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">       </span><span class="c1">// la flota desaparece...</span>
+<span class="c1">// ...pero «focus» sigue existiendo y puede entrar en otra flota</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Pistas de que una relación es una <strong>agregación</strong>:</p>
+<ul>
+<li>La parte <strong>se crea fuera</strong> del todo y se <strong>recibe</strong> (por un método o el constructor).</li>
+<li>La parte <strong>puede pertenecer a otro todo</strong> o cambiar de uno a otro.</li>
+<li>Si el todo <strong>desaparece, las partes siguen existiendo</strong>.</li>
+<li>Se corresponde con un atributo (normalmente una <strong>colección</strong>) de objetos «prestados».</li>
+</ul>
+<p>Otros ejemplos: un <strong>equipo</strong> tiene <strong>jugadores</strong> (el jugador cambia de equipo); un <strong>departamento</strong> agrupa <strong>profesores</strong>; una <strong>biblioteca</strong> tiene <strong>libros</strong>; un <strong>cine</strong> tiene <strong>películas</strong> en cartelera.</p>
+<h2 id="63-composicion">6.3. Composición<a class="headerlink" href="#63-composicion" title="Permanent link">&para;</a></h2>
+<p>La <strong>composición</strong> es una relación todo–parte «fuerte»: las partes <strong>dependen del todo</strong> y <strong>no tienen sentido sin él</strong>. Se dibuja con un <strong>rombo relleno</strong> en el extremo del todo.</p>
+<p>Los <strong>extras</strong> de un alquiler (el GPS, la silla infantil) los crea el alquiler, solo existen dentro de él, y cuando el alquiler se elimina se van con él. En el <code>Alquiler</code> del curso de POO, el propio alquiler crea los extras:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Diagrama</label><label for="__tabbed_2_2">PlantUML</label><label for="__tabbed_2_3">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>classDiagram
+    class Alquiler {
+        -dias : int
+        +anadirExtra(descripcion : String, precioDia : double) void
+        +getTotal() double
+    }
+    class Extra {
+        -descripcion : String
+        -precioDia : double
+    }
+    Alquiler "1" *-- "0..*" Extra : incluye</code></pre>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam classAttributeIconSize 0
+
+class Alquiler {
+  - dias : int
+  + anadirExtra(descripcion : String, precioDia : double) : void
+  + getTotal() : double
+}
+class Extra {
+  - descripcion : String
+  - precioDia : double
+}
+Alquiler "1" *-- "0..*" Extra : incluye
+@enduml
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Alquiler</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Extra</span><span class="o">&gt;</span><span class="w"> </span><span class="n">extras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// El alquiler CREA los extras: nadie se los da hecho</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">anadirExtra</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">descripcion</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">precioDia</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">extras</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Extra</span><span class="p">(</span><span class="n">descripcion</span><span class="p">,</span><span class="w"> </span><span class="n">precioDia</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Pistas de que una relación es una <strong>composición</strong>:</p>
+<ul>
+<li>La parte <strong>se crea dentro</strong> del todo (<code>new</code> en un método o en el constructor del todo).</li>
+<li>La parte <strong>no se comparte</strong>: pertenece a <strong>un único</strong> todo.</li>
+<li>Si el todo <strong>se elimina, las partes desaparecen</strong> con él.</li>
+<li>La multiplicidad del extremo del todo es <strong>siempre <code>1</code></strong> (una parte no puede estar en dos todos a la vez, ni existir sin ninguno).</li>
+</ul>
+<p>Otros ejemplos:</p>
+<table>
+<thead>
+<tr>
+<th>Todo</th>
+<th>Partes</th>
+<th>Por qué es composición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Pedido</code></td>
+<td><code>LineaPedido</code></td>
+<td>Una línea no tiene sentido fuera de su pedido</td>
+</tr>
+<tr>
+<td><code>Libro</code></td>
+<td><code>Capitulo</code></td>
+<td>Si se destruye el libro, sus capítulos dejan de existir</td>
+</tr>
+<tr>
+<td><code>Casa</code></td>
+<td><code>Habitacion</code></td>
+<td>Una habitación pertenece a una sola casa</td>
+</tr>
+<tr>
+<td><code>Factura</code></td>
+<td><code>Concepto</code></td>
+<td>Los conceptos solo existen dentro de su factura</td>
+</tr>
+</tbody>
+</table>
+<h2 id="64-agregacion-frente-a-composicion">6.4. Agregación frente a composición<a class="headerlink" href="#64-agregacion-frente-a-composicion" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th><strong>Agregación</strong> ◇</th>
+<th><strong>Composición</strong> ◆</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>¿Existe la parte sin el todo?</td>
+<td><strong>Sí</strong></td>
+<td><strong>No</strong></td>
+</tr>
+<tr>
+<td>¿Quién crea la parte?</td>
+<td>Alguien <strong>externo</strong></td>
+<td>El <strong>propio todo</strong></td>
+</tr>
+<tr>
+<td>¿Puede compartirse entre varios todos?</td>
+<td><strong>Sí</strong></td>
+<td><strong>No</strong></td>
+</tr>
+<tr>
+<td>Multiplicidad en el extremo del todo</td>
+<td>Cualquiera (<code>1</code>, <code>0..1</code>, <code>*</code>)</td>
+<td><strong>Siempre <code>1</code></strong> (o <code>0..1</code>)</td>
+</tr>
+<tr>
+<td>Si el todo se elimina…</td>
+<td>La parte <strong>sigue</strong> viva</td>
+<td>La parte <strong>se elimina</strong></td>
+</tr>
+<tr>
+<td>Ejemplo del curso</td>
+<td><code>Flota ◇── Vehiculo</code></td>
+<td><code>Alquiler ◆── Extra</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="para-decidir-en-un-caso-concreto">Para decidir en un caso concreto<a class="headerlink" href="#para-decidir-en-un-caso-concreto" title="Permanent link">&para;</a></h3>
+<p>Hazte tres preguntas sobre la parte:</p>
+<ol>
+<li><strong>¿Seguiría existiendo si desaparece el todo?</strong> Sí → agregación. No → composición.</li>
+<li><strong>¿Podría estar en otro todo distinto?</strong> Sí → agregación. No → composición.</li>
+<li><strong>¿Quién la crea?</strong> Fuera → agregación. El todo → composición.</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Ejemplos resueltos</p>
+<table>
+<thead>
+<tr>
+<th>Frase</th>
+<th>Relación</th>
+<th>Justificación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>«Un coche tiene un motor»</td>
+<td>Composición</td>
+<td>El motor se fabrica para ese coche y no se comparte</td>
+</tr>
+<tr>
+<td>«Un coche tiene conductores habituales»</td>
+<td>Asociación</td>
+<td>Los conductores existen por sí solos y no «forman parte» del coche</td>
+</tr>
+<tr>
+<td>«Un equipo tiene jugadores»</td>
+<td>Agregación</td>
+<td>Los jugadores existen sin el equipo y pueden cambiar</td>
+</tr>
+<tr>
+<td>«Una playlist tiene canciones»</td>
+<td>Agregación</td>
+<td>Una canción puede estar en varias listas</td>
+</tr>
+<tr>
+<td>«Una factura tiene líneas»</td>
+<td>Composición</td>
+<td>Una línea no existe sin su factura</td>
+</tr>
+<tr>
+<td>«Una empresa tiene empleados»</td>
+<td>Agregación</td>
+<td>Los empleados existen sin esa empresa</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">En caso de duda, asociación</p>
+<p>La diferencia entre asociación y agregación es <strong>muy sutil</strong>: la agregación casi no añade información a una asociación normal, y muchos autores recomiendan no usarla si no se está seguro. La <strong>composición</strong>, en cambio, sí tiene consecuencias claras (la parte vive y muere con el todo). En este curso debes <strong>saber interpretar y dibujar las tres</strong>, pero si en un problema no está clara la diferencia entre agregación y asociación, justifica tu elección en el diagrama.</p>
+</div>
+<h2 id="65-dependencia">6.5. Dependencia<a class="headerlink" href="#65-dependencia" title="Permanent link">&para;</a></h2>
+<p>La <strong>dependencia</strong> es la relación <strong>más débil</strong>: una clase <strong>usa</strong> a otra de forma <strong>temporal</strong> (durante la ejecución de una operación) y <strong>no la guarda</strong> como parte de su estado. Se dibuja con una <strong>línea discontinua</strong> y una <strong>flecha abierta</strong> que apunta a la clase de la que se depende:</p>
+<div class="highlight"><pre><span></span><code>A ╌╌╌╌╌╌▶ B        «A depende de B»  (si B cambia, A puede verse afectada)
+</code></pre></div>
+<h3 id="cuando-aparece-una-dependencia">¿Cuándo aparece una dependencia?<a class="headerlink" href="#cuando-aparece-una-dependencia" title="Permanent link">&para;</a></h3>
+<p>Una clase <code>A</code> depende de <code>B</code> si, <strong>sin tener un atributo de tipo <code>B</code></strong>, en algún método de <code>A</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Situación</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>B</code> es <strong>parámetro</strong> de un método</td>
+<td><code>void imprimir(Alquiler a)</code></td>
+</tr>
+<tr>
+<td><code>B</code> es el tipo de <strong>retorno</strong></td>
+<td><code>Alquiler registrar(...)</code></td>
+</tr>
+<tr>
+<td><code>B</code> es una <strong>variable local</strong></td>
+<td><code>Extra e = ...;</code> dentro de un método</td>
+</tr>
+<tr>
+<td><code>A</code> <strong>crea</strong> objetos de <code>B</code> con <code>new</code> y no los guarda</td>
+<td><code>new Alquiler(...)</code> y devolverlo</td>
+</tr>
+<tr>
+<td><code>A</code> llama a un método <strong>estático</strong> de <code>B</code></td>
+<td><code>Math.max(...)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ejemplo-la-recepcion-del-taller">Ejemplo: la recepción del taller<a class="headerlink" href="#ejemplo-la-recepcion-del-taller" title="Permanent link">&para;</a></h3>
+<p>Imagina una clase <code>Recepcion</code> que atiende al cliente: recibe un <code>Vehiculo</code> y un <code>Conductor</code>, <strong>crea</strong> el <code>Alquiler</code> y lo devuelve. No guarda ninguno de ellos en un atributo, así que <strong>no hay asociación</strong>: solo <strong>dependencias</strong>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Diagrama</label><label for="__tabbed_3_2">PlantUML</label><label for="__tabbed_3_3">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>classDiagram
+    class Recepcion {
+        +registrarAlquiler(v : Vehiculo, c : Conductor, dias : int) Alquiler
+    }
+    class Vehiculo
+    class Conductor
+    class Alquiler
+    Recepcion ..&gt; Vehiculo : «usa»
+    Recepcion ..&gt; Conductor : «usa»
+    Recepcion ..&gt; Alquiler : «crea»</code></pre>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam classAttributeIconSize 0
+
+class Recepcion {
+  + registrarAlquiler(v : Vehiculo, c : Conductor, dias : int) : Alquiler
+}
+Recepcion ..&gt; Vehiculo : &lt;&lt;use&gt;&gt;
+Recepcion ..&gt; Conductor : &lt;&lt;use&gt;&gt;
+Recepcion ..&gt; Alquiler : &lt;&lt;instantiate&gt;&gt;
+@enduml
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Recepcion</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Ningún atributo de tipo Vehiculo, Conductor ni Alquiler:</span>
+<span class="w">    </span><span class="c1">// solo los usa dentro del método</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Alquiler</span><span class="w"> </span><span class="nf">registrarAlquiler</span><span class="p">(</span><span class="n">Vehiculo</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">Conductor</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dias</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Alquiler</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">dias</span><span class="p">);</span><span class="w">   </span><span class="c1">// «crea»: instancia y devuelve</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>La dependencia se puede <strong>etiquetar con un estereotipo</strong> que indica el tipo de uso: <code>«usa»</code> (el más común, y el que se supone si no se escribe nada), <code>«crea»</code> (instancia objetos), <code>«llama»</code> (invoca un método), <code>«importa»</code> (entre paquetes, capítulo 8).</p>
+<h3 id="otro-ejemplo-imprimir-una-factura">Otro ejemplo: imprimir una factura<a class="headerlink" href="#otro-ejemplo-imprimir-una-factura" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Diagrama</label><label for="__tabbed_4_2">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>classDiagram
+    class Factura {
+        +imprimir(a : Alquiler) void
+    }
+    class Alquiler {
+        +getTotal() double
+    }
+    Factura ..&gt; Alquiler : «usa»</code></pre>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Factura</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">imprimir</span><span class="p">(</span><span class="n">Alquiler</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">          </span><span class="c1">// Alquiler solo como parámetro</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Total: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">getTotal</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" EUR"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="dependencia-frente-a-asociacion">Dependencia frente a asociación<a class="headerlink" href="#dependencia-frente-a-asociacion" title="Permanent link">&para;</a></h3>
+<p>Es la confusión más habitual. La pregunta clave es: <strong>¿la clase guarda al otro objeto como parte de su estado?</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Asociación</strong></th>
+<th><strong>Dependencia</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>¿Aparece en el código como…</td>
+<td>un <strong>atributo</strong> (campo)</td>
+<td>un <strong>parámetro</strong>, variable local o <code>new</code> dentro de un método</td>
+</tr>
+<tr>
+<td>Duración</td>
+<td><strong>Larga</strong>: mientras viva el objeto</td>
+<td><strong>Corta</strong>: lo que dura la operación</td>
+</tr>
+<tr>
+<td>Línea</td>
+<td>Continua (<code>────▶</code>)</td>
+<td>Discontinua (<code>╌╌╌▶</code>)</td>
+</tr>
+<tr>
+<td>Ejemplo</td>
+<td><code>Alquiler</code> guarda su <code>Vehiculo</code></td>
+<td><code>Factura</code> recibe un <code>Alquiler</code> para imprimirlo</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">No dibujes la dependencia si ya hay una relación</p>
+<p>Si <code>Alquiler</code> ya está <strong>asociado</strong> con <code>Vehiculo</code>, no dibujes además una dependencia entre ambos aunque algún método reciba un <code>Vehiculo</code>. La relación más fuerte <strong>ya lo incluye</strong> y el diagrama se llenaría de líneas redundantes.</p>
+</div>
+<h3 id="dependencias-y-acoplamiento">Dependencias y acoplamiento<a class="headerlink" href="#dependencias-y-acoplamiento" title="Permanent link">&para;</a></h3>
+<p>Cada flecha de dependencia es un lugar donde un cambio <strong>se puede propagar</strong>: si cambia la clase <code>Alquiler</code>, hay que revisar <code>Factura</code> y <code>Recepcion</code>. Un buen diseño intenta mantener <strong>pocas dependencias</strong> (<strong>bajo acoplamiento</strong>) y evitar los <strong>ciclos</strong> (<code>A ╌▶ B</code> y <code>B ╌▶ A</code>), porque dos clases que se necesitan mutuamente no se pueden entender, probar ni reutilizar por separado.</p>
+<h2 id="66-guia-para-elegir-la-relacion">6.6. Guía para elegir la relación<a class="headerlink" href="#66-guia-para-elegir-la-relacion" title="Permanent link">&para;</a></h2>
+<p>Cuando dudes, sigue este camino. Se pregunta primero <strong>cómo se guarda</strong> y después <strong>qué clase de vínculo</strong> es.</p>
+<pre class="mermaid"><code>flowchart TD
+    A["¿B aparece como atributo de A?"] --&gt;|No: solo parámetro, local o new| DEP["Dependencia&lt;br&gt;A ╌╌▶ B"]
+    A --&gt;|Sí| B["¿B es parte de A&lt;br&gt;(relación todo-parte)?"]
+    B --&gt;|No: solo se conocen| ASO["Asociación&lt;br&gt;A ──▶ B"]
+    B --&gt;|Sí| C["¿B puede existir&lt;br&gt;sin A?"]
+    C --&gt;|Sí| AGR["Agregación&lt;br&gt;A ◇── B"]
+    C --&gt;|No| COM["Composición&lt;br&gt;A ◆── B"]
+    classDef rel fill:#c5cae9,stroke:#3949ab,stroke-width:2px,color:#1a1a1a
+    class DEP,ASO,AGR,COM rel</code></pre>
+<p>Y para el caso <strong>«A es un tipo de B»</strong>, que no aparece aquí, usarás la <strong>herencia</strong> (capítulo 7).</p>
+<h2 id="67-el-modelo-de-la-empresa-de-alquiler-hasta-ahora">6.7. El modelo de la empresa de alquiler hasta ahora<a class="headerlink" href="#67-el-modelo-de-la-empresa-de-alquiler-hasta-ahora" title="Permanent link">&para;</a></h2>
+<p>Reunimos todo lo visto en los capítulos 5 y 6 sobre el modelo del curso de POO. Cada tipo de relación del diagrama se corresponde con una decisión de diseño que ya conoces del código:</p>
+<pre class="mermaid"><code>classDiagram
+    direction LR
+    class Flota {
+        -nombre : String
+        +incorporar(v : Vehiculo) void
+        +costeTotal(dias : int) double
+    }
+    class Vehiculo {
+        -matricula : String
+        -marca : String
+        -modelo : String
+    }
+    class Alquiler {
+        -dias : int
+        +anadirExtra(d : String, p : double) void
+        +getTotal() double
+    }
+    class Conductor {
+        -dni : String
+        -nombre : String
+    }
+    class Extra {
+        -descripcion : String
+        -precioDia : double
+    }
+    class Recepcion {
+        +registrarAlquiler(v : Vehiculo, c : Conductor, dias : int) Alquiler
+    }
+    Flota "1" o-- "0..*" Vehiculo : agrupa
+    Alquiler "0..*" --&gt; "1" Vehiculo : alquila
+    Alquiler "0..*" --&gt; "1" Conductor : titular
+    Alquiler "1" *-- "0..*" Extra : incluye
+    Recepcion ..&gt; Alquiler : «crea»</code></pre>
+<table>
+<thead>
+<tr>
+<th>Relación</th>
+<th>Por qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Flota ◇── Vehiculo</code></td>
+<td>La flota <strong>agrupa</strong> vehículos que existen por sí mismos (agregación)</td>
+</tr>
+<tr>
+<td><code>Alquiler ──▶ Vehiculo</code></td>
+<td>El alquiler <strong>conoce</strong> su vehículo, pero no lo posee (asociación)</td>
+</tr>
+<tr>
+<td><code>Alquiler ──▶ Conductor</code></td>
+<td>Igual: el conductor existe antes del alquiler (asociación)</td>
+</tr>
+<tr>
+<td><code>Alquiler ◆── Extra</code></td>
+<td>Los extras <strong>nacen y mueren</strong> con el alquiler (composición)</td>
+</tr>
+<tr>
+<td><code>Recepcion ╌▶ Alquiler</code></td>
+<td>La recepción <strong>crea</strong> alquileres pero no los guarda (dependencia)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resumen-del-capitulo">Resumen del capítulo<a class="headerlink" href="#resumen-del-capitulo" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Agregación</strong> (<code>◇</code>): el todo <strong>agrupa</strong> partes que <strong>existen por sí solas</strong>; pueden compartirse y se crean fuera.</li>
+<li><strong>Composición</strong> (<code>◆</code>): las partes <strong>no existen sin el todo</strong>, no se comparten y las crea el propio todo; multiplicidad <code>1</code> en el extremo del todo.</li>
+<li>Ante la duda entre asociación y agregación, usa la <strong>asociación</strong>; la composición solo cuando haya <strong>dependencia de vida</strong> clara.</li>
+<li><strong>Dependencia</strong> (<code>╌╌▶</code>): uso <strong>temporal</strong> (parámetro, variable local, <code>new</code>), sin guardar el objeto en un atributo.</li>
+<li>Asociación, agregación y composición se traducen en <strong>atributos</strong>; la dependencia, en <strong>parámetros, retornos o variables locales</strong>.</li>
+<li>Menos dependencias significa <strong>menos acoplamiento</strong>; evita los <strong>ciclos</strong>.</li>
+</ul>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<p><strong>Actividad 1.</strong> Clasifica cada frase como <strong>asociación</strong>, <strong>agregación</strong>, <strong>composición</strong> o <strong>dependencia</strong> y justifica la respuesta:</p>
+<ol>
+<li>Un curso tiene alumnos matriculados.</li>
+<li>Un libro está formado por capítulos.</li>
+<li>Un cajero automático usa una tarjeta que el cliente le introduce para una operación concreta.</li>
+<li>Un ordenador tiene una placa base y una memoria RAM que se fabrican para él.</li>
+<li>Una asociación deportiva reúne clubes que podrían pertenecer también a otra federación.</li>
+<li>Un empleado trabaja en una empresa.</li>
+</ol>
+<details class="success">
+<summary>Solución</summary>
+<ol>
+<li><strong>Agregación</strong> (o asociación): los alumnos existen sin el curso y pueden estar en otros cursos.</li>
+<li><strong>Composición</strong>: los capítulos no tienen sentido sin el libro y no se comparten.</li>
+<li><strong>Dependencia</strong>: la tarjeta se usa solo durante la operación y no se guarda en el cajero.</li>
+<li><strong>Composición</strong>: se crean para ese ordenador y desaparecen con él. (Hoy en día la RAM suele poder cambiarse de un equipo a otro; en ese caso sería agregación. Lo importante es <strong>justificar</strong> la elección según el enunciado.)</li>
+<li><strong>Agregación</strong>: los clubes existen sin la asociación y pueden estar en otra.</li>
+<li><strong>Asociación</strong>: el empleado y la empresa se conocen, pero ninguno «forma parte» del otro.</li>
+</ol>
+</details>
+<p><strong>Actividad 2.</strong> Dibuja el diagrama de clases de este enunciado, con multiplicidades y el tipo de relación correcto:</p>
+<blockquote>
+<p>Una universidad está formada por departamentos; si la universidad desaparece, sus departamentos también. Cada departamento agrupa profesores, pero los profesores pueden cambiar de departamento y siguen existiendo aunque el departamento se cierre.</p>
+</blockquote>
+<details class="success">
+<summary>Solución</summary>
+<pre class="mermaid"><code>classDiagram
+    class Universidad {
+        -nombre : String
+    }
+    class Departamento {
+        -nombre : String
+    }
+    class Profesor {
+        -dni : String
+        -nombre : String
+    }
+    Universidad "1" *-- "1..*" Departamento : está formada por
+    Departamento "0..1" o-- "0..*" Profesor : agrupa</code></pre>
+<ul>
+<li><strong>Universidad ◆ Departamento</strong>: los departamentos desaparecen con la universidad → <strong>composición</strong>, con multiplicidad <code>1</code> en el lado del todo.</li>
+<li><strong>Departamento ◇ Profesor</strong>: los profesores existen sin el departamento y pueden cambiar de uno a otro → <strong>agregación</strong>. El <code>0..1</code> indica que un profesor puede no estar asignado a ningún departamento en un momento dado.</li>
+</ul>
+</details>
+<p><strong>Actividad 3.</strong> Dibuja el diagrama de clases que corresponde a este código y nombra el tipo de cada relación:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Ordenador</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Placa</span><span class="w"> </span><span class="n">placa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Placa</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Periferico</span><span class="o">&gt;</span><span class="w"> </span><span class="n">perifericos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">conectar</span><span class="p">(</span><span class="n">Periferico</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">perifericos</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">imprimirInforme</span><span class="p">(</span><span class="n">Informe</span><span class="w"> </span><span class="n">informe</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<details class="success">
+<summary>Solución</summary>
+<pre class="mermaid"><code>classDiagram
+    class Ordenador {
+        +conectar(p : Periferico) void
+        +imprimirInforme(informe : Informe) void
+    }
+    class Placa
+    class Periferico
+    class Informe
+    Ordenador "1" *-- "1" Placa
+    Ordenador "1" o-- "0..*" Periferico
+    Ordenador ..&gt; Informe : «usa»</code></pre>
+<ul>
+<li><code>placa = new Placa()</code>: la crea el propio <code>Ordenador</code> y es un atributo → <strong>composición</strong>.</li>
+<li><code>perifericos</code>: una colección de objetos <strong>recibidos</strong> por <code>conectar</code> → <strong>agregación</strong>, con multiplicidad <code>0..*</code>.</li>
+<li><code>Informe</code> solo aparece como <strong>parámetro</strong> → <strong>dependencia</strong>.</li>
+</ul>
+</details>
+<p><strong>Actividad 4.</strong> Un cajero automático recibe la tarjeta de un cliente, <strong>consulta</strong> su <code>Cuenta</code> y devuelve un <code>Recibo</code> que él mismo crea. El cajero no guarda ni la cuenta ni el recibo. Dibuja las clases y las relaciones.</p>
+<details class="success">
+<summary>Solución</summary>
+<pre class="mermaid"><code>classDiagram
+    class Cajero {
+        +retirar(c : Cuenta, cantidad : double) Recibo
+    }
+    class Cuenta {
+        -saldo : double
+    }
+    class Recibo {
+        -importe : double
+    }
+    Cajero ..&gt; Cuenta : «usa»
+    Cajero ..&gt; Recibo : «crea»</code></pre>
+<p>El cajero <strong>no tiene atributos</strong> de tipo <code>Cuenta</code> ni <code>Recibo</code>, así que no hay asociación: solo dependencias. Una usa a <code>Cuenta</code> como <strong>parámetro</strong> y otra <strong>crea</strong> el <code>Recibo</code>.</p>
+</details>
+<p><strong>Actividad 5.</strong> Encuentra los <strong>errores</strong> de este diagrama y dibújalo corregido:</p>
+<pre class="mermaid"><code>classDiagram
+    Habitacion "1" *-- "1..*" Casa : forma parte de
+    Persona "1" *-- "0..*" Libro : posee
+    Cliente ..&gt; Pedido : tiene</code></pre>
+<details class="success">
+<summary>Solución</summary>
+<ol>
+<li><strong>Rombo en el extremo equivocado.</strong> El rombo va en el lado del <strong>todo</strong>, y el todo es la <code>Casa</code>, no la <code>Habitacion</code>. Además las multiplicidades están al revés: una casa tiene muchas habitaciones, no al contrario.</li>
+<li><strong>Composición mal usada.</strong> Un libro <strong>sigue existiendo</strong> si su propietario desaparece (y puede pasar a otra persona), así que no es composición: es una <strong>asociación</strong> o, como mucho, una agregación.</li>
+<li><strong>Dependencia usada como asociación.</strong> «Un cliente <strong>tiene</strong> pedidos» describe una relación <strong>permanente</strong> (atributo), no un uso temporal: es una <strong>asociación</strong>.</li>
+</ol>
+<pre class="mermaid"><code>classDiagram
+    Casa "1" *-- "1..*" Habitacion : tiene
+    Persona "1" -- "0..*" Libro : posee
+    Cliente "1" --&gt; "0..*" Pedido : realiza</code></pre>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      UML · Entornos de Desarrollo
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.indexes", "navigation.expand", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>

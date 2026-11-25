@@ -1,0 +1,1619 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Curso de modelado con UML para Entornos de Desarrollo - diagramas de clases y diagramas de comportamiento">
+      
+      
+      
+        <link rel="canonical" href="https://rlrprofe.github.io/UML/capitulos/03-clases-objetos/">
+      
+      
+        <link rel="prev" href="../02-herramientas/">
+      
+      
+        <link rel="next" href="../04-atributos-operaciones/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>3. Clases y objetos en UML - UML · Diagramas de clases y de comportamiento</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-clases-y-objetos-en-uml" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="UML · Diagramas de clases y de comportamiento" class="md-header__button md-logo" aria-label="UML · Diagramas de clases y de comportamiento" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UML · Diagramas de clases y de comportamiento
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3. Clases y objetos en UML
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/rlrprofe/UML" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rlrprofe/UML
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="UML · Diagramas de clases y de comportamiento" class="md-nav__button md-logo" aria-label="UML · Diagramas de clases y de comportamiento" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UML · Diagramas de clases y de comportamiento
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/rlrprofe/UML" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rlrprofe/UML
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte I · Fundamentos de UML
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte I · Fundamentos de UML
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-introduccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción a UML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-herramientas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Herramientas CASE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte II · Diagramas de clases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte II · Diagramas de clases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Clases y objetos en UML
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Clases y objetos en UML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-lo-que-ya-sabes-de-poo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Lo que ya sabes de POO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-la-clase-en-uml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. La clase en UML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-atributos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Atributos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-operaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Operaciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-visibilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5. Visibilidad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-niveles-de-detalle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6. Niveles de detalle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-de-java-a-uml-y-de-vuelta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7. De Java a UML (y de vuelta)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#38-interpretar-una-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.8. Interpretar una clase
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#39-objetos-e-instanciacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.9. Objetos e instanciación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.9. Objetos e instanciación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notacion-de-un-objeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notación de un objeto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-atributos-operaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Atributos, operaciones y tipos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-asociaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Asociaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-agregacion-composicion-dependencia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Agregación, composición y dependencia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-lo-que-ya-sabes-de-poo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Lo que ya sabes de POO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-la-clase-en-uml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. La clase en UML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-atributos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Atributos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-operaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Operaciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-visibilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5. Visibilidad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-niveles-de-detalle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6. Niveles de detalle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-de-java-a-uml-y-de-vuelta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7. De Java a UML (y de vuelta)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#38-interpretar-una-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.8. Interpretar una clase
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#39-objetos-e-instanciacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.9. Objetos e instanciación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.9. Objetos e instanciación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notacion-de-un-objeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notación de un objeto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="3-clases-y-objetos-en-uml">3. Clases y objetos en UML<a class="headerlink" href="#3-clases-y-objetos-en-uml" title="Permanent link">&para;</a></h1>
+<p>El <strong>diagrama de clases</strong> es el diagrama más importante de UML y la base del resto: describe las clases de un sistema, lo que guardan, lo que pueden hacer y cómo se relacionan. En este capítulo aprenderás a dibujar y leer <strong>una clase</strong> y <strong>un objeto</strong>; en los siguientes, las relaciones entre ellos.</p>
+<h2 id="31-lo-que-ya-sabes-de-poo">3.1. Lo que ya sabes de POO<a class="headerlink" href="#31-lo-que-ya-sabes-de-poo" title="Permanent link">&para;</a></h2>
+<p>En el <a href="https://rlrprofe.github.io/poo/">curso de POO</a> viste que:</p>
+<ul>
+<li>Una <strong>clase</strong> es la plantilla que describe objetos con la misma estructura y comportamiento: sus <strong>atributos</strong> (lo que sabe) y sus <strong>métodos</strong> (lo que hace).</li>
+<li>Un <strong>objeto</strong> es una instancia de una clase, con su propia identidad y con valores concretos en sus atributos.</li>
+<li>Los atributos suelen ser <strong>privados</strong> y los servicios, <strong>públicos</strong> (encapsulación).</li>
+</ul>
+<p>UML da una forma estándar de <strong>dibujar</strong> todo eso. Usaremos la clase <code>Coche</code> del primer capítulo de POO.</p>
+<h2 id="32-la-clase-en-uml">3.2. La clase en UML<a class="headerlink" href="#32-la-clase-en-uml" title="Permanent link">&para;</a></h2>
+<p>Una clase se dibuja como un <strong>rectángulo dividido en tres compartimentos</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Compartimento</th>
+<th>Contiene</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Superior</strong></td>
+<td>El <strong>nombre</strong> de la clase</td>
+<td><code>Coche</code></td>
+</tr>
+<tr>
+<td><strong>Central</strong></td>
+<td>Los <strong>atributos</strong></td>
+<td><code>-velocidad : int</code></td>
+</tr>
+<tr>
+<td><strong>Inferior</strong></td>
+<td>Las <strong>operaciones</strong> (métodos)</td>
+<td><code>+acelerar(incremento : int) : void</code></td>
+</tr>
+</tbody>
+</table>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Diagrama</label><label for="__tabbed_1_2">PlantUML</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>classDiagram
+    class Coche {
+        -totalCoches : int$
+        -matricula : String
+        -marca : String
+        -modelo : String
+        -color : String
+        -potencia : int
+        -velocidad : int
+        -enMarcha : boolean
+        +ponerEnMarcha() void
+        +parar() void
+        +acelerar(incremento : int) void
+        +frenar(decremento : int) void
+        +getVelocidad() int
+        +pintar(color : String) void
+        +getTotalCoches() int$
+    }</code></pre>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam classAttributeIconSize 0
+
+class Coche {
+  - {static} totalCoches : int
+  - matricula : String
+  - marca : String
+  - modelo : String
+  - color : String
+  - potencia : int
+  - velocidad : int
+  - enMarcha : boolean
+  + ponerEnMarcha() : void
+  + parar() : void
+  + acelerar(incremento : int) : void
+  + frenar(decremento : int) : void
+  + getVelocidad() : int
+  + pintar(color : String) : void
+  + {static} getTotalCoches() : int
+}
+@enduml
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Reglas del <strong>nombre</strong>:</p>
+<ul>
+<li>Empieza por <strong>mayúscula</strong> y suele escribirse en singular y en formato <em>CamelCase</em>: <code>Coche</code>, <code>PlazaGaraje</code>.</li>
+<li>Es un <strong>sustantivo</strong> que identifica un concepto del problema, no una acción (<code>Coche</code>, no <code>Conducir</code>).</li>
+<li>Debe ser el mismo que se usará en el código.</li>
+</ul>
+<h2 id="33-atributos">3.3. Atributos<a class="headerlink" href="#33-atributos" title="Permanent link">&para;</a></h2>
+<p>Un atributo se escribe con esta sintaxis; solo son obligatorios el nombre y, en la práctica, el tipo:</p>
+<div class="highlight"><pre><span></span><code>visibilidad nombre : tipo [multiplicidad] = valorInicial {propiedades}
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parte</th>
+<th>Significado</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>visibilidad</strong></td>
+<td>Quién puede acceder (<code>+ - # ~</code>, ver <a href="#35-visibilidad">3.5</a>)</td>
+<td><code>-</code></td>
+</tr>
+<tr>
+<td><strong>nombre</strong></td>
+<td>Identificador, en <em>camelCase</em></td>
+<td><code>velocidad</code></td>
+</tr>
+<tr>
+<td><strong>tipo</strong></td>
+<td>Tipo de dato</td>
+<td><code>int</code>, <code>String</code>, <code>double</code>, <code>boolean</code></td>
+</tr>
+<tr>
+<td><strong>multiplicidad</strong></td>
+<td>Cuántos valores guarda (opcional)</td>
+<td><code>[0..*]</code></td>
+</tr>
+<tr>
+<td><strong>valorInicial</strong></td>
+<td>Valor con el que nace (opcional)</td>
+<td><code>= 0</code></td>
+</tr>
+<tr>
+<td><strong>propiedades</strong></td>
+<td>Condiciones entre llaves (opcional)</td>
+<td><code>{readOnly}</code></td>
+</tr>
+</tbody>
+</table>
+<p>Algunos ejemplos de la clase <code>Coche</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Atributo en UML</th>
+<th>Se lee como…</th>
+<th>Java</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-velocidad : int = 0</code></td>
+<td>Atributo privado entero que empieza en 0</td>
+<td><code>private int velocidad = 0;</code></td>
+</tr>
+<tr>
+<td><code>-matricula : String {readOnly}</code></td>
+<td>Atributo privado que no cambia tras asignarse</td>
+<td><code>private final String matricula;</code></td>
+</tr>
+<tr>
+<td><code>-totalCoches : int</code> (subrayado)</td>
+<td>Atributo <strong>de clase</strong>: uno para todos los coches</td>
+<td><code>private static int totalCoches;</code></td>
+</tr>
+<tr>
+<td><code>+VELOCIDAD_MAXIMA : int = 220 {readOnly}</code></td>
+<td>Constante pública</td>
+<td><code>public static final int VELOCIDAD_MAXIMA = 220;</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Atributos de clase y constantes</p>
+<p>En UML los miembros <code>static</code> se escriben <strong>subrayados</strong>. Las constantes se marcan con <code>{readOnly}</code> (y por convención con el nombre en MAYÚSCULAS).</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Atributos y relaciones</p>
+<p>Un atributo cuyo tipo es <strong>otra clase del modelo</strong> (por ejemplo, <code>Alquiler</code> tiene un <code>Vehiculo</code>) normalmente <strong>no se escribe como atributo</strong>: se dibuja como una <strong>relación</strong> entre las dos clases. Lo verás en el capítulo 5.</p>
+</div>
+<h2 id="34-operaciones">3.4. Operaciones<a class="headerlink" href="#34-operaciones" title="Permanent link">&para;</a></h2>
+<p>Una operación (el método, visto desde el diseño) se escribe así:</p>
+<div class="highlight"><pre><span></span><code>visibilidad nombre(parámetro : tipo, ...) : tipoDeRetorno
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Operación en UML</th>
+<th>Se lee como…</th>
+<th>Java</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+acelerar(incremento : int) : void</code></td>
+<td>Pública, recibe un entero y no devuelve nada</td>
+<td><code>public void acelerar(int incremento)</code></td>
+</tr>
+<tr>
+<td><code>+getVelocidad() : int</code></td>
+<td>Pública, sin parámetros, devuelve un entero</td>
+<td><code>public int getVelocidad()</code></td>
+</tr>
+<tr>
+<td><code>+pintar(color : String) : void</code></td>
+<td>Pública, recibe un texto</td>
+<td><code>public void pintar(String color)</code></td>
+</tr>
+<tr>
+<td><code>+getTotalCoches() : int</code> (subrayada)</td>
+<td>Operación <strong>de clase</strong></td>
+<td><code>public static int getTotalCoches()</code></td>
+</tr>
+</tbody>
+</table>
+<p>Algunas convenciones útiles:</p>
+<ul>
+<li><strong>Los constructores</strong> se pueden omitir o escribirse como <code>+Coche(matricula : String, ...)</code>. Muchos diagramas los omiten porque se deducen.</li>
+<li><strong>Los getters y setters</strong> suelen omitirse cuando no aportan información (a menudo se dibujan solo si son relevantes para el diseño).</li>
+<li>Una <strong>operación abstracta</strong> se escribe en <em>cursiva</em> (lo verás en el capítulo 7).</li>
+<li>Si el método <strong>no devuelve nada</strong>, se indica <code>void</code> (o se omite el tipo de retorno).</li>
+</ul>
+<h2 id="35-visibilidad">3.5. Visibilidad<a class="headerlink" href="#35-visibilidad" title="Permanent link">&para;</a></h2>
+<p>La visibilidad indica <strong>quién puede acceder</strong> a un atributo u operación. Se escribe con un símbolo delante del nombre:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Símbolo</th>
+<th>Visibilidad</th>
+<th>Quién accede</th>
+<th>Java</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>+</code></td>
+<td><strong>Pública</strong></td>
+<td>Cualquier clase</td>
+<td><code>public</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-</code></td>
+<td><strong>Privada</strong></td>
+<td>Solo la propia clase</td>
+<td><code>private</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>#</code></td>
+<td><strong>Protegida</strong></td>
+<td>La clase, su paquete y sus subclases</td>
+<td><code>protected</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>~</code></td>
+<td><strong>De paquete</strong></td>
+<td>Las clases del mismo paquete</td>
+<td><em>(sin modificador)</em></td>
+</tr>
+</tbody>
+</table>
+<p>La regla habitual en diseño: <strong>atributos privados (<code>-</code>) y operaciones públicas (<code>+</code>)</strong>, como pide la encapsulación. Si en un diagrama ves un atributo público (<code>+velocidad : int</code>), conviene preguntarse si es intencionado.</p>
+<h2 id="36-niveles-de-detalle">3.6. Niveles de detalle<a class="headerlink" href="#36-niveles-de-detalle" title="Permanent link">&para;</a></h2>
+<p>Un diagrama <strong>no tiene por qué mostrarlo todo</strong>. Según para qué lo uses, enseñarás más o menos información de cada clase:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Solo el nombre</label><label for="__tabbed_2_2">Nombre y atributos</label><label for="__tabbed_2_3">Completa</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Vista general del sistema: qué clases hay.</p>
+<pre class="mermaid"><code>classDiagram
+    class Coche</code></pre>
+</div>
+<div class="tabbed-block">
+<p>Qué datos guarda cada clase.</p>
+<pre class="mermaid"><code>classDiagram
+    class Coche {
+        -matricula : String
+        -marca : String
+        -modelo : String
+        -velocidad : int
+        -enMarcha : boolean
+    }</code></pre>
+</div>
+<div class="tabbed-block">
+<p>Diseño detallado, listo para implementar.</p>
+<pre class="mermaid"><code>classDiagram
+    class Coche {
+        -matricula : String
+        -marca : String
+        -modelo : String
+        -velocidad : int
+        -enMarcha : boolean
+        +ponerEnMarcha() void
+        +parar() void
+        +acelerar(incremento : int) void
+        +frenar(decremento : int) void
+        +getVelocidad() int
+    }</code></pre>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Regla práctica</p>
+<p>Muestra solo lo necesario para que el diagrama cumpla su función. Un boceto para discutir con el equipo no necesita cada getter; un diagrama de diseño para otro programador, sí necesita los tipos y las visibilidades.</p>
+</div>
+<h2 id="37-de-java-a-uml-y-de-vuelta">3.7. De Java a UML (y de vuelta)<a class="headerlink" href="#37-de-java-a-uml-y-de-vuelta" title="Permanent link">&para;</a></h2>
+<p>Con la notación anterior, pasar de una clase Java a su cuadro UML es casi mecánico. Este es un resumen de la clase <code>Coche</code>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Java</label><label for="__tabbed_3_2">UML</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Coche</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">totalCoches</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">matricula</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">velocidad</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">enMarcha</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Coche</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">matricula</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">marca</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">modelo</span><span class="p">,</span>
+<span class="w">                 </span><span class="n">String</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">potencia</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">acelerar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">incremento</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getVelocidad</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getTotalCoches</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<pre class="mermaid"><code>classDiagram
+    class Coche {
+        -totalCoches : int$
+        -matricula : String #123;readOnly#125;
+        -velocidad : int
+        -enMarcha : boolean
+        +acelerar(incremento : int) void
+        +getVelocidad() int
+        +getTotalCoches() int$
+    }</code></pre>
+</div>
+</div>
+</div>
+<table>
+<thead>
+<tr>
+<th>En Java</th>
+<th>En UML</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nombre de la clase</td>
+<td>Compartimento superior</td>
+</tr>
+<tr>
+<td>Campos (<code>private int velocidad;</code>)</td>
+<td>Compartimento central: <code>-velocidad : int</code></td>
+</tr>
+<tr>
+<td>Métodos</td>
+<td>Compartimento inferior: <code>+acelerar(incremento : int) : void</code></td>
+</tr>
+<tr>
+<td><code>private</code> / <code>public</code> / <code>protected</code></td>
+<td><code>-</code> / <code>+</code> / <code>#</code></td>
+</tr>
+<tr>
+<td>El tipo <strong>antes</strong> del nombre (<code>int velocidad</code>)</td>
+<td>El tipo <strong>después</strong>, tras dos puntos (<code>velocidad : int</code>)</td>
+</tr>
+<tr>
+<td><code>static</code></td>
+<td>Subrayado</td>
+</tr>
+<tr>
+<td><code>final</code></td>
+<td><code>{readOnly}</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Un detalle de orden</p>
+<p>En Java el tipo va <strong>antes</strong> del nombre; en UML, <strong>después</strong> y separado por dos puntos. Es el error de notación más frecuente al empezar.</p>
+</div>
+<h2 id="38-interpretar-una-clase">3.8. Interpretar una clase<a class="headerlink" href="#38-interpretar-una-clase" title="Permanent link">&para;</a></h2>
+<p>Para <strong>leer</strong> una clase dibujada, recórrela en este orden:</p>
+<ol>
+<li><strong>Nombre</strong>: ¿qué concepto representa?</li>
+<li><strong>Atributos</strong>: ¿qué datos guarda y de qué tipo? ¿Alguno es de clase o constante?</li>
+<li><strong>Operaciones</strong>: ¿qué servicios ofrece? ¿Cuáles son públicos y cuáles internos?</li>
+<li><strong>Visibilidad</strong>: ¿respeta la encapsulación (atributos privados)?</li>
+</ol>
+<p>Aplicado a <code>Coche</code>: es un concepto de la empresa de alquiler; guarda matrícula, marca, modelo, color, potencia, velocidad y si está en marcha, además de un contador de coches creados compartido por todos; ofrece operaciones para ponerlo en marcha, pararlo, acelerarlo, frenarlo, consultarlo y pintarlo; y respeta la encapsulación porque todos los atributos son privados.</p>
+<h2 id="39-objetos-e-instanciacion">3.9. Objetos e instanciación<a class="headerlink" href="#39-objetos-e-instanciacion" title="Permanent link">&para;</a></h2>
+<p>Una clase es la plantilla; los <strong>objetos</strong> son las cosas concretas que se crean a partir de ella (instanciación, con <code>new</code> en Java). UML también sabe dibujarlos, con el <strong>diagrama de objetos</strong>: una «fotografía» de los objetos de un sistema en un instante dado, con los valores que tienen en ese momento.</p>
+<h3 id="notacion-de-un-objeto">Notación de un objeto<a class="headerlink" href="#notacion-de-un-objeto" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Se dibuja como un rectángulo con <strong>dos compartimentos</strong>.</li>
+<li>El nombre se escribe <strong>subrayado</strong> con la forma <code>nombreObjeto : NombreClase</code>.</li>
+<li>En el segundo compartimento aparecen los <strong>atributos con su valor</strong> actual (<code>atributo = valor</code>).</li>
+</ul>
+<p>Si el nombre del objeto no importa, se puede escribir solo <code>: Coche</code> (objeto anónimo).</p>
+<p>Este diagrama muestra el resultado de ejecutar el <code>PruebaCoches</code> del curso de POO, con tres coches de la misma clase:</p>
+<p><img alt="Diagrama de objetos: tres coches con valores distintos" src="../../img/diagrama-objetos.svg" /></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Java</label><label for="__tabbed_4_2">PlantUML</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">Coche</span><span class="w"> </span><span class="n">coche1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Coche</span><span class="p">(</span><span class="s">"5671BCD"</span><span class="p">,</span><span class="w"> </span><span class="s">"Ford"</span><span class="p">,</span><span class="w"> </span><span class="s">"Focus"</span><span class="p">,</span><span class="w"> </span><span class="s">"rojo"</span><span class="p">,</span><span class="w"> </span><span class="mi">130</span><span class="p">);</span>
+<span class="n">Coche</span><span class="w"> </span><span class="n">coche2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Coche</span><span class="p">(</span><span class="s">"4410KLM"</span><span class="p">,</span><span class="w"> </span><span class="s">"Seat"</span><span class="p">,</span><span class="w"> </span><span class="s">"Ibiza"</span><span class="p">,</span><span class="w"> </span><span class="s">"azul"</span><span class="p">,</span><span class="w"> </span><span class="mi">95</span><span class="p">);</span>
+<span class="n">Coche</span><span class="w"> </span><span class="n">coche3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Coche</span><span class="p">(</span><span class="s">"8820HTX"</span><span class="p">,</span><span class="w"> </span><span class="s">"Renault"</span><span class="p">,</span><span class="w"> </span><span class="s">"Clio"</span><span class="p">,</span><span class="w"> </span><span class="s">"blanco"</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">);</span>
+
+<span class="n">coche1</span><span class="p">.</span><span class="na">ponerEnMarcha</span><span class="p">();</span>
+<span class="n">coche1</span><span class="p">.</span><span class="na">acelerar</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+<span class="n">coche3</span><span class="p">.</span><span class="na">ponerEnMarcha</span><span class="p">();</span>
+<span class="n">coche3</span><span class="p">.</span><span class="na">acelerar</span><span class="p">(</span><span class="mi">110</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>@startuml
+object "coche1 : Coche" as coche1 {
+  matricula = "5671BCD"
+  marca = "Ford"
+  modelo = "Focus"
+  color = "rojo"
+  potencia = 130
+  velocidad = 60
+  enMarcha = true
+}
+object "coche2 : Coche" as coche2 {
+  matricula = "4410KLM"
+  marca = "Seat"
+  modelo = "Ibiza"
+  color = "azul"
+  potencia = 95
+  velocidad = 0
+  enMarcha = false
+}
+@enduml
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Fíjate en cómo se relacionan el diagrama de clases y el de objetos:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Diagrama de <strong>clases</strong></th>
+<th>Diagrama de <strong>objetos</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Describe</td>
+<td>La <strong>plantilla</strong>: estructura general</td>
+<td>Objetos <strong>concretos</strong> en un instante</td>
+</tr>
+<tr>
+<td>Atributos</td>
+<td>Nombre y tipo (<code>velocidad : int</code>)</td>
+<td>Nombre y <strong>valor</strong> (<code>velocidad = 60</code>)</td>
+</tr>
+<tr>
+<td>Nombre</td>
+<td><code>Coche</code></td>
+<td><code>coche1 : Coche</code> (subrayado)</td>
+</tr>
+<tr>
+<td>Es válido…</td>
+<td>Siempre</td>
+<td>Solo en ese momento</td>
+</tr>
+<tr>
+<td>Sirve para</td>
+<td>Diseñar el sistema</td>
+<td>Ilustrar un ejemplo, explicar un estado, depurar</td>
+</tr>
+</tbody>
+</table>
+<p>Cuando haya relaciones entre clases (capítulo 5), el diagrama de objetos mostrará también los <strong>enlaces</strong> entre los objetos concretos.</p>
+<h2 id="resumen-del-capitulo">Resumen del capítulo<a class="headerlink" href="#resumen-del-capitulo" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Una <strong>clase</strong> se dibuja con tres compartimentos: nombre, atributos y operaciones.</li>
+<li>Atributo: <code>visibilidad nombre : tipo = valorInicial {propiedades}</code>. Operación: <code>visibilidad nombre(parámetros) : tipoRetorno</code>.</li>
+<li>Visibilidad: <code>+</code> pública, <code>-</code> privada, <code>#</code> protegida, <code>~</code> de paquete. Lo habitual: atributos privados y operaciones públicas.</li>
+<li>Lo <strong>estático</strong> se subraya y las constantes se marcan con <code>{readOnly}</code>.</li>
+<li>El nivel de detalle depende de la <strong>finalidad</strong> del diagrama.</li>
+<li>Un <strong>objeto</strong> se dibuja como <code>nombre : Clase</code> (subrayado) con los <strong>valores</strong> de sus atributos: es un diagrama de objetos, una fotografía de un instante.</li>
+</ul>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<p><strong>Actividad 1.</strong> Interpreta este diagrama y responde:</p>
+<pre class="mermaid"><code>classDiagram
+    class Camion {
+        -matricula : String #123;readOnly#125;
+        -cargaMaxima : double
+        -velocidad : int
+        +MAX_VEL : int
+        +acelerar(incremento : int) void
+        +getCargaMaxima() double
+        +costeAlquiler(dias : int) double
+    }</code></pre>
+<ol>
+<li>¿Cuántos atributos tiene y cuántos son privados?</li>
+<li>¿Hay algún atributo que no respete la encapsulación?</li>
+<li>¿Qué atributo no puede cambiar una vez asignado?</li>
+<li>¿Qué operación devuelve un número decimal y qué recibe?</li>
+<li>¿Cómo se escribiría <code>getCargaMaxima</code> en Java?</li>
+</ol>
+<details class="success">
+<summary>Solución</summary>
+<ol>
+<li><strong>Cuatro</strong> atributos; <strong>tres</strong> son privados (<code>matricula</code>, <code>cargaMaxima</code>, <code>velocidad</code>).</li>
+<li>Sí: <code>+MAX_VEL : int</code> es <strong>público</strong>. Sería aceptable si fuera una constante, pero no está marcada como <code>{readOnly}</code>, así que conviene revisarlo.</li>
+<li><code>matricula</code>, por tener <code>{readOnly}</code>.</li>
+<li><code>costeAlquiler</code>, que recibe un entero <code>dias</code> y devuelve un <code>double</code>.</li>
+<li><code>public double getCargaMaxima()</code>.</li>
+</ol>
+</details>
+<p><strong>Actividad 2.</strong> Dibuja el diagrama de la siguiente clase Java (en draw.io o con PlantUML):</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PlazaGaraje</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">codigo</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">ocupada</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">PlazaGaraje</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">codigo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getCodigo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isOcupada</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">ocupar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">costeAlquiler</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">dias</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<details class="success">
+<summary>Solución</summary>
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam classAttributeIconSize 0
+
+class PlazaGaraje {
+  - codigo : String {readOnly}
+  - ocupada : boolean
+  + getCodigo() : String
+  + isOcupada() : boolean
+  + ocupar() : void
+  + costeAlquiler(dias : int) : double
+}
+@enduml
+</code></pre></div>
+<p>El resultado equivale a:</p>
+<pre class="mermaid"><code>classDiagram
+    class PlazaGaraje {
+        -codigo : String #123;readOnly#125;
+        -ocupada : boolean
+        +getCodigo() String
+        +isOcupada() boolean
+        +ocupar() void
+        +costeAlquiler(dias : int) double
+    }</code></pre>
+<p>El constructor se ha omitido, como es habitual.</p>
+</details>
+<p><strong>Actividad 3.</strong> Dibuja el diagrama de objetos que resulta de ejecutar este código, con los valores de los atributos de cada objeto (<code>matricula</code>, <code>color</code>, <code>velocidad</code>, <code>enMarcha</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="n">Coche</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Coche</span><span class="p">(</span><span class="s">"5671BCD"</span><span class="p">,</span><span class="w"> </span><span class="s">"Ford"</span><span class="p">,</span><span class="w"> </span><span class="s">"Focus"</span><span class="p">,</span><span class="w"> </span><span class="s">"rojo"</span><span class="p">,</span><span class="w"> </span><span class="mi">130</span><span class="p">);</span>
+<span class="n">Coche</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Coche</span><span class="p">(</span><span class="s">"4410KLM"</span><span class="p">,</span><span class="w"> </span><span class="s">"Seat"</span><span class="p">,</span><span class="w"> </span><span class="s">"Ibiza"</span><span class="p">,</span><span class="w"> </span><span class="s">"azul"</span><span class="p">,</span><span class="w"> </span><span class="mi">95</span><span class="p">);</span>
+<span class="n">a</span><span class="p">.</span><span class="na">ponerEnMarcha</span><span class="p">();</span>
+<span class="n">a</span><span class="p">.</span><span class="na">acelerar</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+<span class="n">b</span><span class="p">.</span><span class="na">pintar</span><span class="p">(</span><span class="s">"verde"</span><span class="p">);</span>
+</code></pre></div>
+<details class="success">
+<summary>Solución</summary>
+<div class="highlight"><pre><span></span><code>@startuml
+object "a : Coche" as a {
+  matricula = "5671BCD"
+  color = "rojo"
+  velocidad = 60
+  enMarcha = true
+}
+object "b : Coche" as b {
+  matricula = "4410KLM"
+  color = "verde"
+  velocidad = 0
+  enMarcha = false
+}
+@enduml
+</code></pre></div>
+<p>El objeto <code>a</code> está en marcha a 60 km/h; el objeto <code>b</code> sigue parado, pero ha cambiado de color. Son dos objetos de la misma clase con <strong>estados distintos</strong>.</p>
+</details>
+<p><strong>Actividad 4.</strong> Este diagrama contiene <strong>cuatro errores</strong> de notación o de diseño. Encuéntralos y corrígelos:</p>
+<pre class="mermaid"><code>classDiagram
+    class coche {
+        +velocidad : int
+        matricula String
+        -enMarcha : boolean
+        +acelerar : void
+    }</code></pre>
+<details class="success">
+<summary>Solución</summary>
+<ol>
+<li><strong>El nombre de la clase</strong> debe empezar por mayúscula: <code>Coche</code>.</li>
+<li><strong><code>+velocidad : int</code></strong> es un atributo público, lo que rompe la encapsulación: debe ser <code>-velocidad : int</code>.</li>
+<li><strong><code>matricula String</code></strong> no sigue la notación UML: falta la visibilidad y los dos puntos. Correcto: <code>-matricula : String</code>.</li>
+<li><strong><code>+acelerar : void</code></strong> parece un atributo porque le faltan los paréntesis y el parámetro. Correcto: <code>+acelerar(incremento : int) : void</code>.</li>
+</ol>
+<p>Diagrama corregido:</p>
+<pre class="mermaid"><code>classDiagram
+    class Coche {
+        -velocidad : int
+        -matricula : String
+        -enMarcha : boolean
+        +acelerar(incremento : int) void
+    }</code></pre>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      UML · Entornos de Desarrollo
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.indexes", "navigation.expand", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>

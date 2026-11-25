@@ -1,0 +1,1420 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Curso de modelado con UML para Entornos de Desarrollo - diagramas de clases y diagramas de comportamiento">
+      
+      
+      
+        <link rel="canonical" href="https://rlrprofe.github.io/UML/capitulos/01-introduccion/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../02-herramientas/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>1. Introducción a UML - UML · Diagramas de clases y de comportamiento</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-introduccion-a-uml" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="UML · Diagramas de clases y de comportamiento" class="md-header__button md-logo" aria-label="UML · Diagramas de clases y de comportamiento" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UML · Diagramas de clases y de comportamiento
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Introducción a UML
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/rlrprofe/UML" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rlrprofe/UML
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="UML · Diagramas de clases y de comportamiento" class="md-nav__button md-logo" aria-label="UML · Diagramas de clases y de comportamiento" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UML · Diagramas de clases y de comportamiento
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/rlrprofe/UML" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rlrprofe/UML
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte I · Fundamentos de UML
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte I · Fundamentos de UML
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción a UML
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción a UML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-por-que-modelar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. ¿Por qué modelar?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-que-es-uml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Qué es UML
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2. Qué es UML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#un-poco-de-historia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un poco de historia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-uml-y-que-no-es" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué es UML y qué no es
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-caracteristicas-de-uml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Características de UML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-los-diagramas-uml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Los diagramas UML
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4. Los diagramas UML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#un-mismo-sistema-tres-miradas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un mismo sistema, tres miradas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-uml-en-el-desarrollo-de-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5. UML en el desarrollo de software
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5. UML en el desarrollo de software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#donde-encajan-los-diagramas-en-el-ciclo-de-vida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dónde encajan los diagramas en el ciclo de vida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uml-y-las-metodologias-de-desarrollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UML y las metodologías de desarrollo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-piezas-comunes-a-todos-los-diagramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6. Piezas comunes a todos los diagramas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-saber-mas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Para saber más
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-herramientas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Herramientas CASE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte II · Diagramas de clases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte II · Diagramas de clases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-clases-objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Clases y objetos en UML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-atributos-operaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Atributos, operaciones y tipos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-asociaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Asociaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-agregacion-composicion-dependencia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Agregación, composición y dependencia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-por-que-modelar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. ¿Por qué modelar?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-que-es-uml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Qué es UML
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2. Qué es UML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#un-poco-de-historia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un poco de historia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-es-uml-y-que-no-es" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué es UML y qué no es
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-caracteristicas-de-uml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Características de UML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-los-diagramas-uml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Los diagramas UML
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4. Los diagramas UML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#un-mismo-sistema-tres-miradas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un mismo sistema, tres miradas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-uml-en-el-desarrollo-de-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5. UML en el desarrollo de software
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5. UML en el desarrollo de software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#donde-encajan-los-diagramas-en-el-ciclo-de-vida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dónde encajan los diagramas en el ciclo de vida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uml-y-las-metodologias-de-desarrollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UML y las metodologías de desarrollo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-piezas-comunes-a-todos-los-diagramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6. Piezas comunes a todos los diagramas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-saber-mas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Para saber más
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="1-introduccion-a-uml">1. Introducción a UML<a class="headerlink" href="#1-introduccion-a-uml" title="Permanent link">&para;</a></h1>
+<h2 id="11-por-que-modelar">1.1. ¿Por qué modelar?<a class="headerlink" href="#11-por-que-modelar" title="Permanent link">&para;</a></h2>
+<p>Nadie construye un edificio sin planos. Antes de levantar una pared, arquitectos, ingenieros y constructores se ponen de acuerdo sobre qué se va a construir usando dibujos que todos entienden. En el software ocurre lo mismo: cuando un programa tiene decenas de clases, varias personas trabajando y requisitos que cambian, <strong>escribir código directamente</strong> deja de ser suficiente.</p>
+<p>Un <strong>modelo</strong> es una representación simplificada de un sistema que deja fuera los detalles irrelevantes para centrarse en lo que importa en cada momento. Modelar sirve para:</p>
+<ul>
+<li><strong>Entender</strong> el problema antes de resolverlo.</li>
+<li><strong>Comunicar</strong> el diseño al resto del equipo (y al cliente) sin leer código.</li>
+<li><strong>Detectar errores pronto</strong>, cuando corregirlos es barato: es mucho más fácil borrar una caja de un dibujo que reescribir mil líneas de Java.</li>
+<li><strong>Documentar</strong> el sistema para quien lo mantenga después.</li>
+</ul>
+<p>Para que los dibujos signifiquen lo mismo para todos hace falta un lenguaje común. Ese lenguaje es <strong>UML</strong>.</p>
+<h2 id="12-que-es-uml">1.2. Qué es UML<a class="headerlink" href="#12-que-es-uml" title="Permanent link">&para;</a></h2>
+<p><strong>UML</strong> (<em>Unified Modeling Language</em>, Lenguaje Unificado de Modelado) es un <strong>lenguaje gráfico estándar</strong> para visualizar, especificar, construir y documentar los elementos de un sistema de software orientado a objetos.</p>
+<h3 id="un-poco-de-historia">Un poco de historia<a class="headerlink" href="#un-poco-de-historia" title="Permanent link">&para;</a></h3>
+<p>A principios de los años 90 existían decenas de métodos y notaciones para modelar sistemas orientados a objetos, y cada equipo dibujaba a su manera. Tres de sus autores más influyentes, Grady Booch, James Rumbaugh e Ivar Jacobson, se unieron en la empresa Rational Software y <strong>unificaron sus notaciones</strong> en una sola. De ahí el nombre. En 1997 el organismo de estandarización <strong>OMG</strong> (<em>Object Management Group</em>) adoptó UML como estándar, y desde entonces lo mantiene.</p>
+<p>La versión de referencia actual es <strong>UML 2.5.1</strong>, publicada por el OMG, y la familia UML 2 también es una norma internacional (<strong>ISO/IEC 19505</strong>).</p>
+<h3 id="que-es-uml-y-que-no-es">Qué es UML y qué no es<a class="headerlink" href="#que-es-uml-y-que-no-es" title="Permanent link">&para;</a></h3>
+<p>Es habitual confundir UML con otras cosas. Conviene aclararlo desde el principio:</p>
+<table>
+<thead>
+<tr>
+<th>UML <strong>es</strong>…</th>
+<th>UML <strong>no es</strong>…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Un <strong>lenguaje</strong> de modelado: define símbolos y reglas para dibujar</td>
+<td>Una <strong>metodología</strong>: no dice qué pasos seguir para desarrollar un proyecto</td>
+</tr>
+<tr>
+<td>Un <strong>estándar</strong> abierto, el mismo para todos los equipos</td>
+<td>Una <strong>herramienta</strong> concreta: se puede dibujar con papel, con draw.io o con PlantUML</td>
+</tr>
+<tr>
+<td><strong>Independiente</strong> del lenguaje de programación</td>
+<td>Un lenguaje de programación: no se ejecuta</td>
+</tr>
+<tr>
+<td><strong>Visual</strong>: un diagrama se entiende de un vistazo</td>
+<td>Un sustituto del código: describe el sistema, no lo implementa</td>
+</tr>
+</tbody>
+</table>
+<h2 id="13-caracteristicas-de-uml">1.3. Características de UML<a class="headerlink" href="#13-caracteristicas-de-uml" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Estándar y universal.</strong> Un diagrama UML dibujado en Madrid lo entiende un equipo en Tokio.</li>
+<li><strong>Visual y semiformal.</strong> Combina símbolos precisos con texto en lenguaje natural (nombres, notas).</li>
+<li><strong>Independiente del lenguaje y de la herramienta.</strong> Un mismo diagrama de clases puede acabar en Java, C#, Python…</li>
+<li><strong>Orientado a objetos.</strong> Sus conceptos (clase, objeto, herencia, asociación…) son los de la POO que ya conoces.</li>
+<li><strong>Extensible.</strong> Permite añadir significado propio con <strong>estereotipos</strong> (<code>&lt;&lt;interface&gt;&gt;</code>, <code>&lt;&lt;abstract&gt;&gt;</code>…) y notas.</li>
+<li><strong>Con muchos diagramas.</strong> Cada diagrama ofrece una <strong>vista distinta</strong> del mismo sistema; ninguno lo cuenta todo.</li>
+</ul>
+<h2 id="14-los-diagramas-uml">1.4. Los diagramas UML<a class="headerlink" href="#14-los-diagramas-uml" title="Permanent link">&para;</a></h2>
+<p>UML 2 define <strong>14 tipos de diagrama</strong>, que se agrupan en dos grandes familias según la pregunta que responden:</p>
+<ul>
+<li><strong>Diagramas de estructura</strong>: ¿<em>de qué está hecho</em> el sistema? Muestran los elementos que lo forman y cómo se relacionan, sin hablar del paso del tiempo.</li>
+<li><strong>Diagramas de comportamiento</strong>: ¿<em>qué hace</em> el sistema y cómo evoluciona? Muestran funcionalidades, secuencias de mensajes, procesos y cambios de estado.</li>
+</ul>
+<pre class="mermaid"><code>flowchart LR
+    UML["Diagramas UML"] --&gt; E["Estructura&lt;br&gt;¿De qué está hecho?"]
+    UML --&gt; C["Comportamiento&lt;br&gt;¿Qué hace?"]
+    E --&gt; E1["Clases"]
+    E --&gt; E2["Objetos"]
+    E --&gt; E3["Paquetes"]
+    E --&gt; E4["Componentes"]
+    E --&gt; E5["Despliegue"]
+    E --&gt; E6["Estructura compuesta"]
+    E --&gt; E7["Perfiles"]
+    C --&gt; C1["Casos de uso"]
+    C --&gt; C2["Actividades"]
+    C --&gt; C3["Estados"]
+    C --&gt; I["Interacción"]
+    I --&gt; I1["Secuencia"]
+    I --&gt; I2["Comunicación"]
+    I --&gt; I3["Tiempos"]
+    I --&gt; I4["Vista global de interacción"]
+    classDef estudiado fill:#c5cae9,stroke:#3949ab,stroke-width:2px,color:#1a1a1a
+    class E1,E2,E3,C1,C2,C3,I1,I2 estudiado</code></pre>
+<p>En este curso estudiaremos los diagramas resaltados, que son los que se usan a diario en el desarrollo de aplicaciones:</p>
+<table>
+<thead>
+<tr>
+<th>Diagrama</th>
+<th>Familia</th>
+<th>Pregunta que responde</th>
+<th>Capítulos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Clases</strong></td>
+<td>Estructura</td>
+<td>¿Qué clases hay, qué datos y operaciones tienen y cómo se relacionan?</td>
+<td>3 a 10</td>
+</tr>
+<tr>
+<td><strong>Objetos</strong></td>
+<td>Estructura</td>
+<td>¿Cómo son los objetos concretos en un instante dado?</td>
+<td>3 y 5</td>
+</tr>
+<tr>
+<td><strong>Paquetes</strong></td>
+<td>Estructura</td>
+<td>¿Cómo se agrupan las clases?</td>
+<td>8</td>
+</tr>
+<tr>
+<td><strong>Casos de uso</strong></td>
+<td>Comportamiento</td>
+<td>¿Qué puede hacer cada usuario con el sistema?</td>
+<td>12</td>
+</tr>
+<tr>
+<td><strong>Secuencia</strong></td>
+<td>Comportamiento (interacción)</td>
+<td>¿Qué mensajes se envían los objetos y en qué orden?</td>
+<td>13</td>
+</tr>
+<tr>
+<td><strong>Colaboración</strong> (comunicación)</td>
+<td>Comportamiento (interacción)</td>
+<td>¿Qué objetos colaboran y qué mensajes se envían?</td>
+<td>13</td>
+</tr>
+<tr>
+<td><strong>Actividades</strong></td>
+<td>Comportamiento</td>
+<td>¿Qué pasos sigue un proceso y qué decisiones hay?</td>
+<td>14</td>
+</tr>
+<tr>
+<td><strong>Estados</strong></td>
+<td>Comportamiento</td>
+<td>¿Por qué estados pasa un objeto durante su vida?</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<h3 id="un-mismo-sistema-tres-miradas">Un mismo sistema, tres miradas<a class="headerlink" href="#un-mismo-sistema-tres-miradas" title="Permanent link">&para;</a></h3>
+<p>Estas son tres vistas de la empresa de alquiler que ya conoces del curso de POO. Fíjate en que <strong>cada diagrama cuenta algo distinto</strong> y que ninguno es «el bueno»:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Estructura: clases</label><label for="__tabbed_1_2">Comportamiento: secuencia</label><label for="__tabbed_1_3">Comportamiento: estados</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>classDiagram
+    class Flota {
+        -nombre : String
+    }
+    class Vehiculo {
+        &lt;&lt;abstract&gt;&gt;
+        -matricula : String
+        +costeAlquiler(dias : int) double*
+    }
+    class Alquiler {
+        -dias : int
+        +getTotal() double
+    }
+    Flota "1" o-- "0..*" Vehiculo : agrupa
+    Alquiler "*" --&gt; "1" Vehiculo : de</code></pre>
+</div>
+<div class="tabbed-block">
+<pre class="mermaid"><code>sequenceDiagram
+    actor Empleado
+    participant Flota
+    participant Alquiler
+    participant Vehiculo
+    Empleado-&gt;&gt;Flota: buscarPorMatricula("5671BCD")
+    Flota--&gt;&gt;Empleado: vehiculo
+    Empleado-&gt;&gt;Alquiler: new Alquiler(vehiculo, conductor, 3)
+    Empleado-&gt;&gt;Alquiler: getTotal()
+    Alquiler-&gt;&gt;Vehiculo: costeAlquiler(3)
+    Vehiculo--&gt;&gt;Alquiler: 120.0
+    Alquiler--&gt;&gt;Empleado: 120.0</code></pre>
+</div>
+<div class="tabbed-block">
+<pre class="mermaid"><code>stateDiagram-v2
+    [*] --&gt; Parado
+    Parado --&gt; EnMarcha : ponerEnMarcha()
+    EnMarcha --&gt; EnMarcha : acelerar() / frenar()
+    EnMarcha --&gt; Parado : parar()</code></pre>
+</div>
+</div>
+</div>
+<p>El primero describe <strong>qué piezas</strong> hay; el segundo, <strong>cómo colaboran</strong> al calcular el precio de un alquiler; el tercero, <strong>cómo cambia</strong> un vehículo a lo largo de su vida. Aún no sabes leerlos con detalle, y no hace falta: a lo largo del curso los iremos desgranando.</p>
+<h2 id="15-uml-en-el-desarrollo-de-software">1.5. UML en el desarrollo de software<a class="headerlink" href="#15-uml-en-el-desarrollo-de-software" title="Permanent link">&para;</a></h2>
+<h3 id="donde-encajan-los-diagramas-en-el-ciclo-de-vida">Dónde encajan los diagramas en el ciclo de vida<a class="headerlink" href="#donde-encajan-los-diagramas-en-el-ciclo-de-vida" title="Permanent link">&para;</a></h3>
+<p>En la UT1 viste las <strong>fases del desarrollo</strong> de software. UML acompaña a todas ellas, y cada fase tiende a usar unos diagramas más que otros:</p>
+<pre class="mermaid"><code>flowchart LR
+    A["Análisis&lt;br&gt;¿Qué debe hacer?"] --&gt; D["Diseño&lt;br&gt;¿Cómo lo hacemos?"]
+    D --&gt; I["Implementación&lt;br&gt;Escribir el código"]
+    I --&gt; P["Pruebas"]
+    P --&gt; M["Mantenimiento"]
+    A -.- a1["Casos de uso&lt;br&gt;Actividades"]
+    D -.- d1["Clases&lt;br&gt;Secuencia · Estados"]
+    I -.- i1["Generación de código&lt;br&gt;Ingeniería inversa"]
+    P -.- p1["Casos de uso →&lt;br&gt;casos de prueba"]
+    M -.- m1["Diagramas como&lt;br&gt;documentación"]</code></pre>
+<ul>
+<li><strong>Análisis</strong>: los casos de uso y los diagramas de actividades recogen <em>qué</em> necesita el cliente.</li>
+<li><strong>Diseño</strong>: los diagramas de clases, de secuencia y de estados definen <em>cómo</em> se organiza el sistema.</li>
+<li><strong>Implementación</strong>: el diagrama de clases se traduce a código (<strong>ingeniería directa</strong>), y a veces se hace el camino contrario (<strong>ingeniería inversa</strong>). Lo verás en el capítulo 10.</li>
+<li><strong>Pruebas</strong>: cada caso de uso es una fuente de casos de prueba.</li>
+<li><strong>Mantenimiento</strong>: los diagramas permiten entender un sistema ajeno sin leer todo el código.</li>
+</ul>
+<h3 id="uml-y-las-metodologias-de-desarrollo">UML y las metodologías de desarrollo<a class="headerlink" href="#uml-y-las-metodologias-de-desarrollo" title="Permanent link">&para;</a></h3>
+<p>UML <strong>no impone</strong> una forma de trabajar, y por eso se usa de formas distintas según la metodología:</p>
+<ul>
+<li>En metodologías <strong>iterativas y orientadas a objetos</strong> como el <em>Proceso Unificado</em> (RUP), que nació junto a UML, los modelos se elaboran con detalle en cada iteración.</li>
+<li>En metodologías <strong>ágiles</strong>, se usa «lo justo»: bocetos en una pizarra para discutir una idea, sin pretender documentarlo todo.</li>
+</ul>
+<p>Una forma útil de pensarlo, popularizada por Martin Fowler, es que un diagrama puede usarse como:</p>
+<table>
+<thead>
+<tr>
+<th>Uso</th>
+<th>Para qué</th>
+<th>Nivel de detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Boceto</strong></td>
+<td>Pensar y conversar sobre una idea</td>
+<td>Bajo: solo lo esencial</td>
+</tr>
+<tr>
+<td><strong>Plano</strong></td>
+<td>Describir un diseño completo para que otros lo implementen</td>
+<td>Alto</td>
+</tr>
+<tr>
+<td><strong>Lenguaje de programación</strong></td>
+<td>Generar el código automáticamente desde el modelo</td>
+<td>Muy alto (menos habitual)</td>
+</tr>
+</tbody>
+</table>
+<p>En este curso trabajaremos sobre todo en los dos primeros usos.</p>
+<h2 id="16-piezas-comunes-a-todos-los-diagramas">1.6. Piezas comunes a todos los diagramas<a class="headerlink" href="#16-piezas-comunes-a-todos-los-diagramas" title="Permanent link">&para;</a></h2>
+<p>Antes de entrar en cada diagrama, conviene conocer tres elementos que aparecen en todos ellos:</p>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Qué es</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Estereotipo</strong></td>
+<td>Etiqueta entre <code>&lt;&lt;</code> <code>&gt;&gt;</code> (o « ») que añade un significado a un elemento</td>
+<td><code>&lt;&lt;interface&gt;&gt;</code>, <code>&lt;&lt;abstract&gt;&gt;</code></td>
+</tr>
+<tr>
+<td><strong>Nota</strong></td>
+<td>Comentario libre, unido al elemento al que se refiere con una línea discontinua</td>
+<td>«Tarifa: 40 € al día»</td>
+</tr>
+<tr>
+<td><strong>Restricción</strong></td>
+<td>Condición entre llaves que debe cumplirse</td>
+<td><code>{velocidad &gt;= 0}</code></td>
+</tr>
+</tbody>
+</table>
+<p>Además, todo diagrama debería tener un <strong>título</strong> y respetar una regla de oro: <strong>cada diagrama responde a una sola pregunta</strong>. Si un dibujo intenta contarlo todo, no se entiende nada.</p>
+<h2 id="resumen-del-capitulo">Resumen del capítulo<a class="headerlink" href="#resumen-del-capitulo" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Un <strong>modelo</strong> simplifica un sistema para entenderlo, comunicarlo y detectar errores pronto.</li>
+<li><strong>UML</strong> es un lenguaje gráfico estándar (OMG, versión 2.5.1), independiente del lenguaje de programación. No es una metodología ni una herramienta.</li>
+<li>Hay 14 diagramas: de <strong>estructura</strong> (¿de qué está hecho?) y de <strong>comportamiento</strong> (¿qué hace?). Cada uno ofrece una vista distinta.</li>
+<li>UML acompaña a todas las fases del ciclo de vida y se adapta a distintas metodologías, desde la más formal a la más ágil.</li>
+<li>Los <strong>estereotipos</strong>, las <strong>notas</strong> y las <strong>restricciones</strong> extienden cualquier diagrama.</li>
+</ul>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<p><strong>Actividad 1.</strong> Indica qué tipo de diagrama usarías para responder a cada pregunta sobre la empresa de alquiler:</p>
+<ol>
+<li>¿Qué datos tiene un <code>Vehiculo</code> y con qué otras clases se relaciona?</li>
+<li>¿Qué cosas puede hacer un cliente con la aplicación?</li>
+<li>¿En qué orden se envían los mensajes cuando se calcula el precio de un alquiler?</li>
+<li>¿Qué pasos sigue un empleado desde que llega un cliente hasta que firma el contrato?</li>
+<li>¿Por qué situaciones pasa un <code>Alquiler</code> (reservado, en curso, finalizado…)?</li>
+</ol>
+<details class="success">
+<summary>Solución</summary>
+<ol>
+<li><strong>Diagrama de clases</strong> (estructura).</li>
+<li><strong>Diagrama de casos de uso</strong> (comportamiento).</li>
+<li><strong>Diagrama de secuencia</strong> (interacción).</li>
+<li><strong>Diagrama de actividades</strong> (proceso con pasos y decisiones).</li>
+<li><strong>Diagrama de estados</strong> (ciclo de vida de un objeto).</li>
+</ol>
+</details>
+<p><strong>Actividad 2.</strong> Indica si cada afirmación es verdadera o falsa y corrige las falsas:</p>
+<ol>
+<li>UML es un lenguaje de programación que se compila.</li>
+<li>Un diagrama de clases UML solo se puede traducir a Java.</li>
+<li>UML es una metodología que obliga a seguir unas fases concretas.</li>
+<li>Un diagrama de secuencia pertenece a los diagramas de comportamiento.</li>
+<li>Con un único diagrama se puede describir completamente cualquier sistema.</li>
+</ol>
+<details class="success">
+<summary>Solución</summary>
+<ol>
+<li><strong>Falsa.</strong> UML es un lenguaje de <strong>modelado</strong> gráfico; no se compila ni se ejecuta.</li>
+<li><strong>Falsa.</strong> UML es independiente del lenguaje: el mismo diagrama puede acabar en Java, C#, Python…</li>
+<li><strong>Falsa.</strong> UML es un lenguaje, no una metodología. Se puede usar con distintas metodologías.</li>
+<li><strong>Verdadera.</strong> Es un diagrama de interacción, que es una familia dentro de los de comportamiento.</li>
+<li><strong>Falsa.</strong> Cada diagrama es una vista parcial; por eso existen varios tipos.</li>
+</ol>
+</details>
+<p><strong>Actividad 3.</strong> Une cada fase del desarrollo con el uso más habitual de UML en ella: análisis, diseño, implementación, pruebas.</p>
+<ul>
+<li><strong>A.</strong> Generar código a partir del diagrama de clases.</li>
+<li><strong>B.</strong> Recoger lo que necesita el cliente con casos de uso.</li>
+<li><strong>C.</strong> Derivar casos de prueba de los casos de uso.</li>
+<li><strong>D.</strong> Definir las clases y la secuencia de mensajes.</li>
+</ul>
+<details class="success">
+<summary>Solución</summary>
+<ul>
+<li>Análisis → <strong>B</strong></li>
+<li>Diseño → <strong>D</strong></li>
+<li>Implementación → <strong>A</strong></li>
+<li>Pruebas → <strong>C</strong></li>
+</ul>
+</details>
+<h2 id="para-saber-mas">Para saber más<a class="headerlink" href="#para-saber-mas" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.omg.org/spec/UML/">Especificación UML del OMG</a>: el estándar oficial.</li>
+<li><a href="https://www.iso.org/standard/32624.html">ISO/IEC 19505-1:2012</a>: la norma internacional de UML 2.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      UML · Entornos de Desarrollo
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.indexes", "navigation.expand", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>

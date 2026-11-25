@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://rlrprofe.github.io/UML/</loc>
+         <lastmod>2026-11-25</lastmod>
+    </url>
+    <url>
+         <loc>https://rlrprofe.github.io/UML/capitulos/01-introduccion/</loc>
+         <lastmod>2026-11-25</lastmod>
+    </url>
+    <url>
+         <loc>https://rlrprofe.github.io/UML/capitulos/02-herramientas/</loc>
+         <lastmod>2026-11-25</lastmod>
+    </url>
+    <url>
+         <loc>https://rlrprofe.github.io/UML/capitulos/03-clases-objetos/</loc>
+         <lastmod>2026-11-25</lastmod>
+    </url>
+    <url>
+         <loc>https://rlrprofe.github.io/UML/capitulos/04-atributos-operaciones/</loc>
+         <lastmod>2026-11-25</lastmod>
+    </url>
+    <url>
+         <loc>https://rlrprofe.github.io/UML/capitulos/05-asociaciones/</loc>
+         <lastmod>2026-11-25</lastmod>
+    </url>
+    <url>
+         <loc>https://rlrprofe.github.io/UML/capitulos/06-agregacion-composicion-dependencia/</loc>
+         <lastmod>2026-11-25</lastmod>
+    </url>
+</urlset>

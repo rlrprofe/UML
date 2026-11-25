@@ -1,0 +1,1837 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Curso de modelado con UML para Entornos de Desarrollo - diagramas de clases y diagramas de comportamiento">
+      
+      
+      
+        <link rel="canonical" href="https://rlrprofe.github.io/UML/capitulos/04-atributos-operaciones/">
+      
+      
+        <link rel="prev" href="../03-clases-objetos/">
+      
+      
+        <link rel="next" href="../05-asociaciones/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>4. Atributos, operaciones y tipos - UML · Diagramas de clases y de comportamiento</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-atributos-operaciones-y-tipos-en-detalle" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="UML · Diagramas de clases y de comportamiento" class="md-header__button md-logo" aria-label="UML · Diagramas de clases y de comportamiento" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UML · Diagramas de clases y de comportamiento
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4. Atributos, operaciones y tipos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/rlrprofe/UML" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rlrprofe/UML
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="UML · Diagramas de clases y de comportamiento" class="md-nav__button md-logo" aria-label="UML · Diagramas de clases y de comportamiento" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UML · Diagramas de clases y de comportamiento
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/rlrprofe/UML" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    rlrprofe/UML
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte I · Fundamentos de UML
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte I · Fundamentos de UML
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-introduccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción a UML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-herramientas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Herramientas CASE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte II · Diagramas de clases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parte II · Diagramas de clases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-clases-objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Clases y objetos en UML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Atributos, operaciones y tipos
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Atributos, operaciones y tipos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-multiplicidad-de-un-atributo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Multiplicidad de un atributo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-atributos-derivados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Atributos derivados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-elementos-de-clase-y-constantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. Elementos de clase y constantes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-tipos-de-los-atributos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. Tipos de los atributos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-enumeraciones-y-tipos-de-dato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5. Enumeraciones y tipos de dato
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5. Enumeraciones y tipos de dato">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enumeraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeraciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-dato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de dato
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-operaciones-en-detalle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6. Operaciones en detalle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.6. Operaciones en detalle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parámetros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sobrecarga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sobrecarga
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constructores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operaciones-de-consulta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operaciones de consulta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#se-dibujan-todos-los-getters-y-setters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Se dibujan todos los getters y setters?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47-propiedades-y-restricciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7. Propiedades y restricciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#48-que-debe-llevar-una-clase-cohesion-y-responsabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.8. ¿Qué debe llevar una clase? Cohesión y responsabilidad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#49-la-notacion-de-una-clase-de-un-vistazo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.9. La notación de una clase de un vistazo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-asociaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Asociaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-agregacion-composicion-dependencia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Agregación, composición y dependencia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-multiplicidad-de-un-atributo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Multiplicidad de un atributo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-atributos-derivados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Atributos derivados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-elementos-de-clase-y-constantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. Elementos de clase y constantes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-tipos-de-los-atributos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. Tipos de los atributos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-enumeraciones-y-tipos-de-dato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5. Enumeraciones y tipos de dato
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5. Enumeraciones y tipos de dato">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enumeraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeraciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-dato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de dato
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-operaciones-en-detalle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6. Operaciones en detalle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.6. Operaciones en detalle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parámetros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sobrecarga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sobrecarga
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constructores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operaciones-de-consulta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operaciones de consulta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#se-dibujan-todos-los-getters-y-setters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Se dibujan todos los getters y setters?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47-propiedades-y-restricciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7. Propiedades y restricciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#48-que-debe-llevar-una-clase-cohesion-y-responsabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.8. ¿Qué debe llevar una clase? Cohesión y responsabilidad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#49-la-notacion-de-una-clase-de-un-vistazo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.9. La notación de una clase de un vistazo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="4-atributos-operaciones-y-tipos-en-detalle">4. Atributos, operaciones y tipos en detalle<a class="headerlink" href="#4-atributos-operaciones-y-tipos-en-detalle" title="Permanent link">&para;</a></h1>
+<p>En el capítulo 3 aprendiste a dibujar una clase con sus atributos y operaciones básicos. Ese nivel basta para un boceto, pero cuando el diagrama se usa para <strong>diseñar</strong> o para <strong>generar código</strong> hay que ser más preciso: ¿el atributo es opcional?, ¿se guarda o se calcula?, ¿qué valores admite?, ¿qué parámetros recibe la operación? En este capítulo aprenderás la notación que responde a esas preguntas y, sobre todo, a <strong>decidir qué debe llevar cada clase</strong>.</p>
+<h2 id="41-multiplicidad-de-un-atributo">4.1. Multiplicidad de un atributo<a class="headerlink" href="#41-multiplicidad-de-un-atributo" title="Permanent link">&para;</a></h2>
+<p>A un atributo se le puede indicar <strong>cuántos valores guarda</strong> escribiendo la multiplicidad entre corchetes después del tipo:</p>
+<div class="highlight"><pre><span></span><code>visibilidad nombre : tipo [multiplicidad]
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Multiplicidad</th>
+<th>Significado</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[1]</code></td>
+<td>Exactamente un valor (es lo habitual y <strong>no se escribe</strong>)</td>
+<td><code>-dni : String</code></td>
+</tr>
+<tr>
+<td><code>[0..1]</code></td>
+<td><strong>Opcional</strong>: puede no tener valor</td>
+<td><code>-email : String [0..1]</code></td>
+</tr>
+<tr>
+<td><code>[*]</code> o <code>[0..*]</code></td>
+<td>Cero o más valores</td>
+<td><code>-observaciones : String [0..*]</code></td>
+</tr>
+<tr>
+<td><code>[1..*]</code></td>
+<td><strong>Al menos uno</strong></td>
+<td><code>-telefonos : String [1..*]</code></td>
+</tr>
+<tr>
+<td><code>[3]</code></td>
+<td>Un número exacto</td>
+<td><code>-coordenadas : double [3]</code></td>
+</tr>
+</tbody>
+</table>
+<p>En el curso de POO, el conductor de la empresa de alquiler solo tenía DNI y nombre. Ampliémoslo para ver estas notaciones:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Diagrama</label><label for="__tabbed_1_2">PlantUML</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>classDiagram
+    class Conductor {
+        -dni : String
+        -nombre : String
+        -fechaNacimiento : LocalDate
+        -telefonos : String[1..*]
+        -email : String[0..1]
+        +getEdad() int
+    }</code></pre>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam classAttributeIconSize 0
+
+class Conductor {
+  - dni : String
+  - nombre : String
+  - fechaNacimiento : LocalDate
+  - telefonos : String [1..*]
+  - email : String [0..1]
+  + getEdad() : int
+}
+@enduml
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Así se traduce a Java:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Conductor</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">dni</span><span class="p">;</span><span class="w">                          </span><span class="c1">// [1]: obligatorio</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">LocalDate</span><span class="w"> </span><span class="n">fechaNacimiento</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">telefonos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">   </span><span class="c1">// [1..*]: colección</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">;</span><span class="w">                        </span><span class="c1">// [0..1]: puede ser null</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getEdad</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Una multiplicidad <strong>superior a uno</strong> se traduce en una <strong>colección</strong> (<code>List</code>) o en un array.</li>
+<li>Una multiplicidad <strong><code>[0..1]</code></strong> se traduce en un atributo que <strong>puede valer <code>null</code></strong> (o en un <code>Optional</code>). Marcarlo en el diagrama avisa al programador de que debe comprobarlo.</li>
+</ul>
+<h2 id="42-atributos-derivados">4.2. Atributos derivados<a class="headerlink" href="#42-atributos-derivados" title="Permanent link">&para;</a></h2>
+<p>Un atributo es <strong>derivado</strong> cuando su valor <strong>se calcula</strong> a partir de otros atributos, en lugar de guardarse. Se marca con una <strong>barra</strong> (<code>/</code>) delante del nombre.</p>
+<p>El conductor tiene <code>fechaNacimiento</code>; su <strong>edad</strong> no hace falta guardarla porque se obtiene de la fecha y de la fecha actual:</p>
+<div class="highlight"><pre><span></span><code>/edad : int
+</code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Diagrama</label><label for="__tabbed_2_2">PlantUML</label><label for="__tabbed_2_3">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>classDiagram
+    class Conductor {
+        -fechaNacimiento : LocalDate
+        -/edad : int
+    }
+    class Alquiler {
+        -dias : int
+        -/total : double
+    }</code></pre>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam classAttributeIconSize 0
+
+class Conductor {
+  - fechaNacimiento : LocalDate
+  - /edad : int
+}
+class Alquiler {
+  - dias : int
+  - /total : double
+}
+@enduml
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Conductor</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">LocalDate</span><span class="w"> </span><span class="n">fechaNacimiento</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// /edad no es un campo: se calcula cada vez</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getEdad</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Period</span><span class="p">.</span><span class="na">between</span><span class="p">(</span><span class="n">fechaNacimiento</span><span class="p">,</span><span class="w"> </span><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">()).</span><span class="na">getYears</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">¿Por qué no guardar la edad?</p>
+<p>Un dato calculado y guardado <strong>se queda desfasado</strong>: la edad guardada hoy es incorrecta el día del cumpleaños. Lo mismo ocurre con el <code>total</code> de un alquiler: depende del vehículo, de los días y de los extras, y por eso <code>Alquiler.getTotal()</code> lo calcula cada vez. Marcar <code>/total</code> en el diagrama dice «esto se calcula, no se almacena».</p>
+</div>
+<h2 id="43-elementos-de-clase-y-constantes">4.3. Elementos de clase y constantes<a class="headerlink" href="#43-elementos-de-clase-y-constantes" title="Permanent link">&para;</a></h2>
+<p>Ya sabes que lo <strong>estático</strong> se subraya (en Mermaid y PlantUML se marca con <code>$</code> y <code>{static}</code>). Dos casos muy frecuentes:</p>
+<ul>
+<li><strong>Contador compartido</strong> por todos los objetos: <code>-totalCoches : int</code> (estático).</li>
+<li><strong>Constante</strong>: un valor que <strong>no cambia</strong> nunca. Es estático y de solo lectura: <code>{readOnly}</code>.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Diagrama</label><label for="__tabbed_3_2">PlantUML</label><label for="__tabbed_3_3">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>classDiagram
+    class Coche {
+        +MAX_PLAZAS : int$
+        -totalCoches : int$
+        -plazas : int
+        +getTotalCoches() int$
+    }</code></pre>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam classAttributeIconSize 0
+
+class Coche {
+  + {static} MAX_PLAZAS : int {readOnly}
+  - {static} totalCoches : int
+  - plazas : int
+  + {static} getTotalCoches() : int
+}
+@enduml
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Coche</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MAX_PLAZAS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="w">   </span><span class="c1">// constante: static + final</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">totalCoches</span><span class="p">;</span><span class="w">           </span><span class="c1">// contador compartido</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">plazas</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getTotalCoches</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">totalCoches</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Constante = <code>static</code> + <code>final</code></p>
+<p>En Java, <code>final</code> es <code>{readOnly}</code> en UML. Una constante se escribe en MAYÚSCULAS (<code>MAX_PLAZAS</code>). Una constante pública es aceptable porque nadie puede modificarla; un atributo público <strong>modificable</strong> rompe la encapsulación.</p>
+</div>
+<h2 id="44-tipos-de-los-atributos">4.4. Tipos de los atributos<a class="headerlink" href="#44-tipos-de-los-atributos" title="Permanent link">&para;</a></h2>
+<p>El tipo que se escribe tras los dos puntos puede ser de varias clases. Lo importante es saber <strong>dónde</strong> dibujar cada uno:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo del atributo</th>
+<th>Ejemplo</th>
+<th>Cómo se dibuja</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Primitivo</strong></td>
+<td><code>int</code>, <code>double</code>, <code>boolean</code></td>
+<td>Atributo: <code>-velocidad : int</code></td>
+</tr>
+<tr>
+<td><strong>Clase de la biblioteca del lenguaje</strong> (valores)</td>
+<td><code>String</code>, <code>LocalDate</code>, <code>BigDecimal</code></td>
+<td>Atributo: <code>-nombre : String</code></td>
+</tr>
+<tr>
+<td><strong>Enumeración</strong></td>
+<td><code>Combustible</code></td>
+<td>Atributo con ese tipo (apartado 4.5)</td>
+</tr>
+<tr>
+<td><strong>Otra clase del modelo</strong></td>
+<td><code>Vehiculo</code>, <code>Conductor</code></td>
+<td><strong>Relación</strong> entre clases (capítulo 5), no atributo</td>
+</tr>
+<tr>
+<td><strong>Colección de objetos del modelo</strong></td>
+<td><code>List&lt;Extra&gt;</code></td>
+<td><strong>Relación</strong> con multiplicidad <code>*</code> (capítulo 5)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Error muy frecuente</p>
+<p>Escribir <code>-vehiculo : Vehiculo</code> dentro de <code>Alquiler</code> <strong>y además</strong> dibujar la línea entre ambas clases es contar lo mismo dos veces. Si el tipo es una clase de tu modelo, se dibuja <strong>solo la relación</strong>. En Java sí será un campo (<code>private Vehiculo vehiculo;</code>), pero el diagrama lo expresa con una línea.</p>
+</div>
+<p>UML define sus propios tipos básicos (<code>Integer</code>, <code>Real</code>, <code>Boolean</code>, <code>String</code>), pero en la práctica se escriben los <strong>tipos del lenguaje</strong> en el que se va a programar (<code>int</code>, <code>double</code>…), como hacemos en este curso.</p>
+<p>Cuando un tipo es <strong>genérico</strong> se indica entre ángulos (<code>List&lt;String&gt;</code>), y Mermaid lo escribe con tildes (<code>List~String~</code>). Sin embargo, es más claro usar la multiplicidad (<code>String [0..*]</code>), que no depende del lenguaje.</p>
+<h2 id="45-enumeraciones-y-tipos-de-dato">4.5. Enumeraciones y tipos de dato<a class="headerlink" href="#45-enumeraciones-y-tipos-de-dato" title="Permanent link">&para;</a></h2>
+<h3 id="enumeraciones">Enumeraciones<a class="headerlink" href="#enumeraciones" title="Permanent link">&para;</a></h3>
+<p>Una <strong>enumeración</strong> es un tipo con un conjunto <strong>fijo y cerrado</strong> de valores. Se dibuja como una clase con el estereotipo <code>&lt;&lt;enumeration&gt;&gt;</code> y los valores (literales) en el compartimento central. Imaginemos que la empresa clasifica sus vehículos por tipo de combustible:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Diagrama</label><label for="__tabbed_4_2">PlantUML</label><label for="__tabbed_4_3">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>classDiagram
+    class Combustible {
+        &lt;&lt;enumeration&gt;&gt;
+        GASOLINA
+        DIESEL
+        ELECTRICO
+        HIBRIDO
+    }
+    class Coche {
+        -matricula : String
+        -combustible : Combustible
+    }
+    Coche ..&gt; Combustible</code></pre>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam classAttributeIconSize 0
+
+enum Combustible {
+  GASOLINA
+  DIESEL
+  ELECTRICO
+  HIBRIDO
+}
+class Coche {
+  - matricula : String
+  - combustible : Combustible
+}
+Coche ..&gt; Combustible
+@enduml
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">Combustible</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">GASOLINA</span><span class="p">,</span><span class="w"> </span><span class="n">DIESEL</span><span class="p">,</span><span class="w"> </span><span class="n">ELECTRICO</span><span class="p">,</span><span class="w"> </span><span class="n">HIBRIDO</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Coche</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">matricula</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Combustible</span><span class="w"> </span><span class="n">combustible</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Es una buena opción cuando los valores posibles son <strong>pocos, fijos y sin comportamiento propio</strong> (combustible, estado de un alquiler, día de la semana). Si cada valor necesitara sus propios datos o métodos distintos, probablemente sea mejor una jerarquía de clases (capítulo 7).</p>
+<h3 id="tipos-de-dato">Tipos de dato<a class="headerlink" href="#tipos-de-dato" title="Permanent link">&para;</a></h3>
+<p>Un <strong>tipo de dato</strong> (<code>&lt;&lt;dataType&gt;&gt;</code>) es un conjunto de valores <strong>sin identidad propia</strong>: dos direcciones con la misma calle, ciudad y código postal son «la misma» dirección. A diferencia de una clase, lo que importa es el valor, no el objeto. Ejemplos: <code>Direccion</code>, <code>Dinero</code>, <code>Fecha</code>.</p>
+<pre class="mermaid"><code>classDiagram
+    class Direccion {
+        &lt;&lt;dataType&gt;&gt;
+        +calle : String
+        +ciudad : String
+        +codigoPostal : String
+    }</code></pre>
+<p>En Java se suele implementar como una clase inmutable o como un <code>record</code>.</p>
+<h2 id="46-operaciones-en-detalle">4.6. Operaciones en detalle<a class="headerlink" href="#46-operaciones-en-detalle" title="Permanent link">&para;</a></h2>
+<p>La sintaxis completa de una operación es:</p>
+<div class="highlight"><pre><span></span><code>visibilidad nombre(dirección parámetro : tipo = valorPorDefecto, ...) : tipoRetorno {propiedades}
+</code></pre></div>
+<h3 id="parametros">Parámetros<a class="headerlink" href="#parametros" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Dirección</strong>: <code>in</code> (entrada, la opción por defecto y que no se escribe), <code>out</code> (salida) e <code>inout</code> (entrada y salida). En Java todos los parámetros son de entrada, así que casi siempre se omite.</li>
+<li><strong>Valor por defecto</strong>: <code>acelerar(incremento : int = 10)</code>. Java no tiene valores por defecto en los parámetros, así que se traduce con <strong>sobrecarga</strong>.</li>
+</ul>
+<h3 id="sobrecarga">Sobrecarga<a class="headerlink" href="#sobrecarga" title="Permanent link">&para;</a></h3>
+<p>Varias operaciones pueden tener <strong>el mismo nombre con distintos parámetros</strong>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Diagrama</label><label for="__tabbed_5_2">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>classDiagram
+    class Vehiculo {
+        +acelerar() void
+        +acelerar(incremento : int) void
+        +pintar(color : String) void
+    }</code></pre>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">acelerar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">acelerar</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w">              </span><span class="c1">// valor por defecto: 10 km/h</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">acelerar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">incremento</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="constructores">Constructores<a class="headerlink" href="#constructores" title="Permanent link">&para;</a></h3>
+<p>El constructor se escribe con el <strong>nombre de la clase</strong> y, si se quiere resaltar, con el estereotipo <code>&lt;&lt;create&gt;&gt;</code>. Como no devuelve nada, no lleva tipo de retorno:</p>
+<div class="highlight"><pre><span></span><code>+&lt;&lt;create&gt;&gt; Coche(matricula : String, marca : String, modelo : String, color : String, potencia : int)
+</code></pre></div>
+<p>En los diagramas de diseño suele <strong>omitirse</strong>, igual que los <em>getters</em> y <em>setters</em> triviales, porque saturan el dibujo sin aportar información. Se muestran cuando son relevantes (por ejemplo, un constructor con una validación importante).</p>
+<h3 id="operaciones-de-consulta">Operaciones de consulta<a class="headerlink" href="#operaciones-de-consulta" title="Permanent link">&para;</a></h3>
+<p>Una operación marcada con <code>{query}</code> <strong>no modifica el estado</strong> del objeto: solo lo consulta. Es el caso de <code>getVelocidad()</code> o de <code>getTotal()</code>. Java no tiene una palabra equivalente, pero la propiedad documenta una garantía útil para quien usa la clase.</p>
+<div class="highlight"><pre><span></span><code>+getTotal() : double {query}
+</code></pre></div>
+<h3 id="se-dibujan-todos-los-getters-y-setters">¿Se dibujan todos los getters y setters?<a class="headerlink" href="#se-dibujan-todos-los-getters-y-setters" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Contexto del diagrama</th>
+<th>¿Mostrar <em>getters/setters</em>?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Boceto</strong> o análisis (qué clases hay)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Diseño</strong> (cómo será la clase)</td>
+<td>Solo los que forman parte del servicio</td>
+</tr>
+<tr>
+<td><strong>Documentación de una API pública</strong></td>
+<td>Sí, todas las operaciones públicas</td>
+</tr>
+<tr>
+<td><strong>Ingeniería inversa</strong> (la herramienta los genera)</td>
+<td>Suelen aparecer todos: conviene filtrarlos</td>
+</tr>
+</tbody>
+</table>
+<h2 id="47-propiedades-y-restricciones">4.7. Propiedades y restricciones<a class="headerlink" href="#47-propiedades-y-restricciones" title="Permanent link">&para;</a></h2>
+<p>Entre <strong>llaves</strong> se pueden añadir a un atributo, a una operación o a una clase:</p>
+<ul>
+<li><strong>Propiedades</strong> predefinidas: <code>{readOnly}</code> (no cambia después de asignarse), <code>{unique}</code> (sin repetidos), <code>{ordered}</code> (mantiene el orden), <code>{id}</code> (identifica al objeto), <code>{query}</code>.</li>
+<li><strong>Restricciones</strong>: una condición que <strong>siempre debe cumplirse</strong>, escrita en lenguaje natural o en un lenguaje formal (OCL, que no veremos): <code>{potencia &gt; 0}</code>.</li>
+</ul>
+<p>Las restricciones largas se colocan en una <strong>nota</strong> conectada por una línea discontinua al elemento afectado:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Diagrama</label><label for="__tabbed_6_2">PlantUML</label><label for="__tabbed_6_3">Java</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>classDiagram
+    class Vehiculo {
+        -matricula : String #123;readOnly#125;
+        -potencia : int
+        -velocidad : int
+    }
+    note for Vehiculo "La potencia debe ser positiva. La velocidad nunca supera la velocidad máxima."</code></pre>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam classAttributeIconSize 0
+
+class Vehiculo {
+  - matricula : String {readOnly}
+  - potencia : int
+  - velocidad : int
+}
+note right of Vehiculo
+  {potencia &gt; 0}
+  {velocidad &lt;= velocidad máxima}
+end note
+@enduml
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="nf">Vehiculo</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">matricula</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">marca</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">modelo</span><span class="p">,</span>
+<span class="w">                </span><span class="n">String</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">potencia</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">potencia</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                       </span><span class="c1">// restricción {potencia &gt; 0}</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">"La potencia debe ser positiva"</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">matricula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matricula</span><span class="p">;</span><span class="w">                </span><span class="c1">// {readOnly}: el campo es final</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Las restricciones son la parte del diagrama que <strong>más se olvida</strong> y la que más errores evita: convierten una regla del enunciado (la potencia es siempre positiva) en un requisito visible para quien programa.</p>
+<h2 id="48-que-debe-llevar-una-clase-cohesion-y-responsabilidad">4.8. ¿Qué debe llevar una clase? Cohesión y responsabilidad<a class="headerlink" href="#48-que-debe-llevar-una-clase-cohesion-y-responsabilidad" title="Permanent link">&para;</a></h2>
+<p>Saber dibujar una clase es la mitad del trabajo; la otra mitad es <strong>decidir qué incluir</strong>. El criterio principal es la <strong>responsabilidad única</strong>: una clase debe representar <strong>un solo concepto</strong> y tener <strong>una sola razón para cambiar</strong>. Cuando una clase hace de todo (se la llama a veces «clase Dios») es difícil de entender, de probar y de modificar.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Mal diseño</label><label for="__tabbed_7_2">Mejor diseño</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>classDiagram
+    class Alquiler {
+        -vehiculo : Vehiculo
+        -dias : int
+        +getTotal() double
+        +imprimirFactura() void
+        +enviarFacturaPorEmail(email : String) void
+        +guardarEnBaseDeDatos() void
+    }</code></pre>
+</div>
+<div class="tabbed-block">
+<pre class="mermaid"><code>classDiagram
+    class Alquiler {
+        -dias : int
+        +getTotal() double
+    }
+    class Factura {
+        +imprimir() void
+        +enviarPorEmail(email : String) void
+    }
+    class AlquilerRepositorio {
+        +guardar(alquiler : Alquiler) void
+    }
+    Factura ..&gt; Alquiler
+    AlquilerRepositorio ..&gt; Alquiler</code></pre>
+</div>
+</div>
+</div>
+<p>Un <strong>alquiler</strong> sabe calcular su importe; <strong>imprimir</strong> o <strong>enviar</strong> una factura y <strong>guardar</strong> en una base de datos son responsabilidades distintas que probablemente cambien por motivos distintos. Al separarlas, un cambio en el formato de la factura no obliga a tocar la clase <code>Alquiler</code>.</p>
+<p>Preguntas para comprobar la <strong>cohesión</strong> de una clase:</p>
+<ol>
+<li>¿Puedo describir su propósito en <strong>una frase sin «y»</strong>?</li>
+<li>¿Todas sus operaciones <strong>usan sus atributos</strong>, o hay operaciones que no tienen nada que ver con ellos?</li>
+<li>¿Su nombre es un <strong>sustantivo claro</strong> del problema (<code>Alquiler</code>) y no algo vago (<code>Gestor</code>, <code>Manager</code>, <code>Datos</code>)?</li>
+<li>¿Tiene <strong>demasiados</strong> atributos o métodos para caber en un compartimento legible?</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Lo opuesto: clases anémicas</p>
+<p>El exceso contrario también es un problema: clases que solo tienen atributos y <em>getters/setters</em> y ninguna lógica, mientras otra clase hace todos los cálculos. La idea de la orientación a objetos es que cada clase <strong>cuide sus propios datos y ofrezca las operaciones que los manejan</strong>.</p>
+</div>
+<h2 id="49-la-notacion-de-una-clase-de-un-vistazo">4.9. La notación de una clase de un vistazo<a class="headerlink" href="#49-la-notacion-de-una-clase-de-un-vistazo" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Notación</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Atributo</td>
+<td><code>vis nombre : tipo [mult] = valor {prop}</code></td>
+<td><code>-telefonos : String [1..*]</code></td>
+</tr>
+<tr>
+<td>Atributo opcional</td>
+<td><code>[0..1]</code></td>
+<td><code>-email : String [0..1]</code></td>
+</tr>
+<tr>
+<td>Atributo derivado</td>
+<td><code>/nombre</code></td>
+<td><code>/edad : int</code></td>
+</tr>
+<tr>
+<td>Constante</td>
+<td>estático + <code>{readOnly}</code></td>
+<td><code>+MAX_PLAZAS : int</code></td>
+</tr>
+<tr>
+<td>Operación</td>
+<td><code>vis nombre(par : tipo) : retorno</code></td>
+<td><code>+acelerar(incremento : int) : void</code></td>
+</tr>
+<tr>
+<td>Operación de consulta</td>
+<td><code>{query}</code></td>
+<td><code>+getTotal() : double {query}</code></td>
+</tr>
+<tr>
+<td>Constructor</td>
+<td><code>&lt;&lt;create&gt;&gt;</code> o nombre de la clase</td>
+<td><code>+Coche(matricula : String)</code></td>
+</tr>
+<tr>
+<td>Enumeración</td>
+<td><code>&lt;&lt;enumeration&gt;&gt;</code> + literales</td>
+<td><code>Combustible</code></td>
+</tr>
+<tr>
+<td>Tipo de dato</td>
+<td><code>&lt;&lt;dataType&gt;&gt;</code></td>
+<td><code>Direccion</code></td>
+</tr>
+<tr>
+<td>Restricción</td>
+<td><code>{condición}</code> o nota</td>
+<td><code>{potencia &gt; 0}</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="resumen-del-capitulo">Resumen del capítulo<a class="headerlink" href="#resumen-del-capitulo" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Un atributo puede indicar su <strong>multiplicidad</strong> (<code>[0..1]</code> opcional, <code>[1..*]</code> al menos uno, <code>[*]</code> cualquier número).</li>
+<li>Un atributo <strong>derivado</strong> (<code>/edad</code>) se calcula a partir de otros: no se guarda.</li>
+<li>Una <strong>constante</strong> es estática y de solo lectura (<code>static final</code> en Java).</li>
+<li>Si el tipo es una <strong>clase del modelo</strong>, se dibuja una <strong>relación</strong>, no un atributo.</li>
+<li>Las <strong>enumeraciones</strong> (<code>&lt;&lt;enumeration&gt;&gt;</code>) modelan conjuntos fijos de valores; los <strong>tipos de dato</strong> (<code>&lt;&lt;dataType&gt;&gt;</code>), valores sin identidad.</li>
+<li>Las operaciones pueden llevar <strong>parámetros con dirección y valor por defecto</strong>, <strong>sobrecarga</strong>, y marcarse como <code>{query}</code>.</li>
+<li>Las <strong>restricciones</strong> entre llaves o en notas recogen las reglas que el objeto siempre debe cumplir.</li>
+<li>Una clase debe tener <strong>una sola responsabilidad</strong> y alta <strong>cohesión</strong>.</li>
+</ul>
+<h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">&para;</a></h2>
+<p><strong>Actividad 1.</strong> Interpreta esta clase y responde:</p>
+<pre class="mermaid"><code>classDiagram
+    class Empleado {
+        -dni : String #123;readOnly#125;
+        -nombre : String
+        -fechaAlta : LocalDate
+        -telefonos : String[1..*]
+        -segundoApellido : String[0..1]
+        -/antiguedad : int
+        +SALARIO_MINIMO : double$
+        +getAntiguedad() int
+        +cambiarTelefono(viejo : String, nuevo : String) void
+    }</code></pre>
+<ol>
+<li>¿Qué atributos son obligatorios y cuáles opcionales?</li>
+<li>¿Cuántos teléfonos puede tener un empleado como mínimo?</li>
+<li>¿Se guarda la antigüedad? ¿Por qué?</li>
+<li>¿Qué significa que <code>SALARIO_MINIMO</code> sea estático? ¿Debería llevar alguna propiedad más?</li>
+<li>Escribe los atributos del empleado en Java.</li>
+</ol>
+<details class="success">
+<summary>Solución</summary>
+<ol>
+<li>Opcional: solo <code>segundoApellido</code> (<code>[0..1]</code>). El resto son obligatorios (<code>[1]</code> implícito); <code>telefonos</code> además admite varios valores.</li>
+<li><strong>Uno</strong> como mínimo (<code>[1..*]</code>).</li>
+<li><strong>No</strong> se guarda: <code>/antiguedad</code> es derivado y se calcula a partir de <code>fechaAlta</code>.</li>
+<li>Es un valor <strong>compartido por todos</strong> los empleados (pertenece a la clase). Al ser una constante, debería marcarse también como <code>{readOnly}</code> y llamarse en mayúsculas, como ya está.</li>
+<li><code>java
+   private final String dni;
+   private String nombre;
+   private LocalDate fechaAlta;
+   private List&lt;String&gt; telefonos = new ArrayList&lt;&gt;();
+   private String segundoApellido;            // puede ser null
+   // antiguedad: no es campo, se calcula en getAntiguedad()
+   public static final double SALARIO_MINIMO = 1134.0;</code></li>
+</ol>
+</details>
+<p><strong>Actividad 2.</strong> Una biblioteca guarda de cada <strong>socio</strong>: su número de socio (no cambia nunca), nombre, fecha de nacimiento, al menos un teléfono, un correo electrónico (opcional), y su <strong>tipo de cuota</strong> (que solo puede ser <code>INFANTIL</code>, <code>ADULTO</code> o <code>JUBILADO</code>). Se necesita conocer su edad. Dibuja la clase <code>Socio</code> y lo que haga falta para el tipo de cuota.</p>
+<details class="success">
+<summary>Solución</summary>
+<pre class="mermaid"><code>classDiagram
+    class TipoCuota {
+        &lt;&lt;enumeration&gt;&gt;
+        INFANTIL
+        ADULTO
+        JUBILADO
+    }
+    class Socio {
+        -numeroSocio : int #123;readOnly#125;
+        -nombre : String
+        -fechaNacimiento : LocalDate
+        -telefonos : String[1..*]
+        -email : String[0..1]
+        -cuota : TipoCuota
+        -/edad : int
+        +getEdad() int
+    }
+    Socio ..&gt; TipoCuota</code></pre>
+<ul>
+<li>El número de socio es <code>{readOnly}</code> porque «no cambia nunca».</li>
+<li><code>email</code> es <code>[0..1]</code> (opcional) y <code>telefonos</code> es <code>[1..*]</code> (al menos uno).</li>
+<li>La <strong>edad</strong> se pide pero es derivada de la fecha de nacimiento: <code>/edad</code>.</li>
+<li>Los tres tipos de cuota forman un conjunto cerrado: <strong>enumeración</strong>.</li>
+</ul>
+</details>
+<p><strong>Actividad 3.</strong> Dibuja el diagrama de esta clase Java:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Cuenta</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">COMISION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.5</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numCuentas</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">iban</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">saldo</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">titulares</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Cuenta</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">iban</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">ingresar</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">cantidad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">ingresar</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">cantidad</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">concepto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getSaldo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getNumCuentas</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<details class="success">
+<summary>Solución</summary>
+<div class="highlight"><pre><span></span><code>@startuml
+skinparam classAttributeIconSize 0
+
+class Cuenta {
+  + {static} COMISION : double {readOnly}
+  - {static} numCuentas : int
+  - iban : String {readOnly}
+  - saldo : double
+  - titulares : String [1..*]
+  + &lt;&lt;create&gt;&gt; Cuenta(iban : String)
+  + ingresar(cantidad : double) : void
+  + ingresar(cantidad : double, concepto : String) : void
+  + getSaldo() : double {query}
+  + {static} getNumCuentas() : int
+}
+@enduml
+</code></pre></div>
+<p>Detalles que suelen olvidarse: <code>COMISION</code> es constante (estática y <code>{readOnly}</code>), <code>iban</code> es <code>final</code> y por tanto <code>{readOnly}</code>, <code>ingresar</code> está <strong>sobrecargada</strong> (dos firmas) y <code>titulares</code> es una colección, que en UML se expresa con multiplicidad. (El <code>[1..*]</code> es una decisión de diseño: una cuenta debería tener al menos un titular.)</p>
+</details>
+<p><strong>Actividad 4.</strong> Esta clase hace demasiadas cosas. Identifica las responsabilidades y propón un diseño mejor:</p>
+<pre class="mermaid"><code>classDiagram
+    class Pedido {
+        -cliente : String
+        -lineas : List~String~
+        -total : double
+        +calcularTotal() double
+        +aplicarDescuento(porcentaje : double) void
+        +generarPDF() void
+        +enviarEmail() void
+        +guardarEnBD() void
+        +conectarConBD() void
+    }</code></pre>
+<details class="success">
+<summary>Solución</summary>
+<p>Responsabilidades mezcladas:</p>
+<ol>
+<li><strong>Pedido</strong> (el concepto): cliente, líneas y cálculo del total y del descuento.</li>
+<li><strong>Presentación</strong>: <code>generarPDF()</code>.</li>
+<li><strong>Comunicación</strong>: <code>enviarEmail()</code>.</li>
+<li><strong>Persistencia</strong>: <code>guardarEnBD()</code> y <code>conectarConBD()</code>.</li>
+</ol>
+<pre class="mermaid"><code>classDiagram
+    class Pedido {
+        -cliente : Cliente
+        -/total : double
+        +calcularTotal() double
+        +aplicarDescuento(porcentaje : double) void
+    }
+    class LineaPedido {
+        -producto : String
+        -cantidad : int
+        -precio : double
+    }
+    class GeneradorPDF {
+        +generar(pedido : Pedido) void
+    }
+    class ServicioEmail {
+        +enviar(pedido : Pedido) void
+    }
+    class PedidoRepositorio {
+        +guardar(pedido : Pedido) void
+    }
+    GeneradorPDF ..&gt; Pedido
+    ServicioEmail ..&gt; Pedido
+    PedidoRepositorio ..&gt; Pedido</code></pre>
+<p>Además, <code>lineas : List&lt;String&gt;</code> mezclaba un tipo del modelo en un atributo: lo correcto es una clase <code>LineaPedido</code> y una <strong>relación</strong> (capítulo 5). Las líneas de puntos son <strong>dependencias</strong> (capítulo 6).</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      UML · Entornos de Desarrollo
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.indexes", "navigation.expand", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>
